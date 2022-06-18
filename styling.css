@@ -1,0 +1,91 @@
+body {
+    background-color: #edf2f4;
+    color: #d90429;
+    font-family: Garamond, Georgia;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#mainhdr{
+    background-color: #dad7cd;
+    color: #588157;
+}
+
+#navbar {
+    background-color: #fff3b0;
+    color: #9e2a2b;
+}
+
+#navbar ul{
+    padding: 0;
+    list-style: none;
+}
+
+#navbar li{
+    display: inline;
+}
+
+#navbar a{
+    color: #9e2a2b;
+    text-decoration: none;    
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+#showcase {
+    background-image: url(../images/plainbg.jpg);
+    background-position: center right;
+    height: 300px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#showcase h1{
+    color: #540b0e;
+    font-size: 25px;
+    line-height: 1.6em;
+    padding-top: 30px;
+}
+
+#main {
+    float: left;
+    width: 30%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    background: #ecf39e;
+    color: #132a13;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#mainftr {
+    background: #ef476f ;
+    color: #073b4c;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media(max-width: 600px){
+    #main{
+        width: 100%;
+        float: none;
+    }
+
+    #sidebar{
+        width: 100%;
+        float: none;
+    }
+}

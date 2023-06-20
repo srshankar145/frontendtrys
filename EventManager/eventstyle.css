@@ -1,0 +1,228 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --first-color: #606c5d;
+  --scnd-color: #fff4f4;
+  --thrd-color: #f7e6c4;
+  --fourt-color: #f1c376;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  background-color: #fff4f4;
+  color: #f1c376;
+}
+
+.container {
+  /* border: 2px solid red; */
+  background-color: #606c5d;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+label {
+  font-size: 14px;
+}
+
+input {
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 15px;
+  border: none;
+}
+
+select {
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 15px;
+  border: none;
+}
+
+#areas {
+  font-size: 1rem;
+  color: inherit;
+  background-color: seagreen;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li {
+  /* border: 2px solid yellow; */
+  padding: 0 10px;
+}
+
+.buildcon {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.datetime {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-area {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-right: 15px;
+}
+
+.timefrm-area {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-right: 15px;
+}
+
+.timeto-area {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.subbtn {
+  /* border: 2px solid seagreen; */
+  width: 100%;
+}
+
+.doubook {
+  margin: 10px;
+}
+
+button {
+  /* width: 45%; */
+  padding: 0.65rem 4.5rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.datetime {
+  margin: 10px;
+}
+
+.slot-area {
+  margin: 10px;
+}
+
+/* .slot-area label {
+  margin-bottom: 5px;
+} */
+
+#slot {
+  background-color: #05595b;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+li > input[type="radio"]:checked + label:hover {
+  background-color: #c2dedc;
+  color: #116a7b;
+  padding: 10px 40px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.booking {
+  /* border: 2px solid red; */
+  /* margin-right: 10px; */
+  position: relative;
+  /* margin-left: 12px; */
+  display: flex;
+  justify-content: space-between;
+  transition: 0.7s;
+}
+
+.chkInput {
+  visibility: hidden;
+  margin-left: 220px;
+}
+
+.bookLbl {
+  position: absolute;
+  width: 40px;
+  height: 25px;
+  top: 3px;
+  right: 20px;
+  background-color: lightgreen;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.lblText {
+  /* border: 2px solid red; */
+  margin-top: 5px;
+}
+
+.circle {
+  background-color: #4b8673;
+  width: 20px;
+  height: 20px;
+  top: 3px;
+  border-radius: 50%;
+  position: relative;
+  /* left: 3px; */
+  right: 5px;
+  animation: toggleOff 0.4s linear backwards;
+}
+
+.chkInput:checked + .bookLbl {
+  /* border: 2px solid red; */
+  background-color: #f5df99;
+}
+
+.chkInput:checked + .bookLbl .circle {
+  animation: toggleOn 0.4s linear forwards;
+  background-color: #4c3a51;
+}
+
+.subbtn {
+  margin: 10px;
+}
+
+/*Animation s */
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(25px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

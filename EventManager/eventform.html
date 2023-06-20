@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event form</title>
+    <link rel="stylesheet" href="eventstyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p>Create Event</p>
+      <form action="#">
+        <div class="buildcon">
+          <label for="build">Select Building </label>
+          <!-- <input list="areas" id="build" name="build" /> -->
+          <select id="areas">
+            <option value="Ganapathy">Ganapathy</option>
+            <option value="Saravanampatti">Saravanampatti</option>
+            <option value="Gandipuram">Gandipuram</option>
+            <option value="Ukkadam">Ukkadam</option>
+            <option value="Singanallur">Singanallur</option>
+            <option value="Annur">Annur</option>
+          </select>
+        </div>
+
+        <div class="datetime">
+          <div class="day-area">
+            <label for="day">Day </label>
+            <input type="date" name="day" value="2023-06-18" id="day" />
+          </div>
+
+          <div class="timefrm-area">
+            <label for="timefrom">Time-From </label>
+            <input
+              type="time"
+              name="timefrm"
+              value="18:30"
+              min="09:00"
+              max="21:00"
+              id="timefrm"
+            />
+          </div>
+
+          <div class="timeto-area">
+            <label for="timeto">Time-To </label>
+            <input
+              type="time"
+              name="timeto"
+              value="19:30"
+              min="09:00"
+              max="21:00"
+              id="timeto"
+            />
+          </div>
+        </div>
+
+        <div class="slot-area">
+          <label for="slot">Slot Duration </label>
+          <ul id="slot">
+            <li>
+              <input
+                type="radio"
+                name="duration"
+                id="15min"
+                onmouseover="optSelected(this)"
+              />
+              <label for="15min">15min</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="duration"
+                id="30min"
+                onmouseover="optSelected(this)"
+              />
+              <label for="30min">30min</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="duration"
+                id="60min"
+                onmouseover="optSelected(this)"
+              />
+              <label for="60min">60min</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="booking">
+          <label class="lblText"> Double Booking </label>
+          <input type="checkbox" id="doubook" class="chkInput" />
+          <label for="doubook" class="bookLbl">
+            <div class="circle"></div
+          ></label>
+        </div>
+
+        <div class="subbtn">
+          <button>Cancel</button>
+          <button>Create</button>
+        </div>
+      </form>
+    </div>
+    <script src="eventscript.js"></script>
+  </body>
+</html>

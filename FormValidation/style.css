@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,700,700italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* border: 2px solid saddlebrown; */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.storeimg {
+  /* border: 2px solid slateblue; */
+  height: 500px;
+  width: 600px;
+}
+
+.signup_Container {
+  border: 2px solid #ffe4a7;
+  padding: 1rem;
+  font-family: "Fira Sans";
+  font-size: 1rem;
+}
+.titlemsg {
+  padding: 0 0 1.5rem 0;
+}
+
+.wlcmemsg {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+p {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* #signup {
+  position: relative;
+} */
+
+label {
+  /* border: 2px solid limegreen; */
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+input {
+  border: 2px solid #fff2cc;
+  /* display: block; */
+  padding: 0.75rem;
+  font-family: "PT Serif";
+  /* margin-bottom: 1rem; */
+  width: 20rem;
+  font-size: 0.85rem;
+
+  /* font-weight: 600; */
+}
+
+input:placeholder-shown {
+  font-style: italic;
+}
+
+#fname {
+  position: relative;
+}
+
+.ph-user-focus {
+  /* border: 2px solid saddlebrown; */
+  font-size: 1.25rem;
+  position: absolute;
+  transform: translate(-1.5rem, 0.75rem);
+  color: #e4d0d0;
+}
+
+#email {
+  /* border: 2px solid seagreen; */
+  position: relative;
+}
+
+.ph-microsoft-outlook-logo {
+  font-size: 1.25rem;
+  position: absolute;
+  transform: translate(-1.5rem, 0.75rem);
+  color: #e4d0d0;
+}
+
+#password {
+  position: relative;
+}
+
+.ph-lock-key {
+  font-size: 1.25rem;
+  position: absolute;
+  transform: translate(-1.5rem, 0.75rem);
+  color: #e4d0d0;
+}
+
+button {
+  display: block;
+  margin: 40px 100px 5px 125px;
+  padding: 0.75rem 1.75rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 20px;
+  background-color: #f4b183;
+}
+
+#fname_err,
+#email_err {
+  font-size: 0.75rem;
+  color: crimson;
+}
+
+.success {
+  border: 2px solid green;
+}

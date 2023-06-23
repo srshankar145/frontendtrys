@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div class="img_Container">
+      <img
+        src="Online store _Isometric.svg"
+        alt="store image"
+        class="storeimg"
+      />
+    </div>
+    <div class="signup_Container">
+      <div class="titlemsg">
+        <div class="wlcmemsg">Welcome OnBoard</div>
+        <p>Sign Up to continue</p>
+      </div>
+      <form id="signup">
+        <label for="fname">Fullname</label>
+        <input
+          type="text"
+          name="fname"
+          id="fname"
+          placeholder="Type your Name"
+          autocomplete="username"
+        />
+        <i class="ph ph-user-focus"></i>
+        <small><div id="fname_err"></div></small>
+        <br />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Type your E-mail"
+          autocomplete="username"
+        />
+        <i class="ph ph-microsoft-outlook-logo"></i>
+        <small><div id="email_err"></div></small>
+        <br />
+        <label for="passwrd">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="passwrd"
+          placeholder="Type your Password"
+          autocomplete="new-password"
+        />
+        <i class="ph ph-lock-key"></i>
+        <small><div id="pass_err"></div></small>
+        <br />
+        <label for="rptPass">Repeat Password</label>
+        <input
+          type="password"
+          name="password"
+          id="rptPass"
+          placeholder="Repeat your Password"
+          autocomplete="new-password"
+        />
+        <i class="ph ph-lock-key"></i>
+        <small><div id="rpass_err"></div></small>
+        <button type="submit">SIGNUP</button>
+      </form>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

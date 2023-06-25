@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>Signup Form</header>
+      <form action="https://colorhunt.co/">
+        <!-- Email Field -->
+        <div class="field email-field">
+          <div class="input-field">
+            <input
+              type="email"
+              placeholder="Enter your Email"
+              class="email"
+              autocomplete="username"
+            />
+          </div>
+          <span class="error email-error"
+            ><i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Enter a Valid Email</p>
+          </span>
+        </div>
+
+        <!-- Create Password -->
+        <div class="field create-password">
+          <div class="input-field">
+            <input
+              type="password"
+              class="password"
+              autocomplete="new-password"
+              placeholder="Create Password"
+            />
+            <i class="bx bx-hide show-hide"></i>
+          </div>
+          <span class="error password-error"
+            ><i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">
+              Please enter atleast 8 character includes number, symbol, small &
+              capital letter.
+            </p>
+          </span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="field confirm-password">
+          <div class="input-field">
+            <input
+              type="password"
+              class="cPassword"
+              autocomplete="new-password"
+              placeholder="Confirm your Password"
+            />
+            <i class="bx bx-hide show-hide"></i>
+          </div>
+          <span class="error cPassword-error"
+            ><i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Password doesn't matched.</p>
+          </span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="input-field button">
+          <input type="submit" value="Submit Now" />
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

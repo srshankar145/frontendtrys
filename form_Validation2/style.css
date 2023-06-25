@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root {
+  --primary-color: #0a4d68;
+  --secondary-color: #088395;
+  --third-color: #05bfdb;
+  --light-color: #00ffca;
+  --fully-Dark: #001c30;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-color);
+}
+
+.container {
+  position: relative;
+  max-width: 370px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+}
+
+.container header {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fully-Dark);
+}
+
+.container form {
+  margin-top: 30px;
+}
+
+form .field {
+  margin-bottom: 20px;
+}
+
+form .input-field {
+  position: relative;
+  height: 55px;
+  width: 100%;
+}
+
+.input-field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0 15px;
+  border: 1px solid var(--third-color);
+}
+
+.invalid input {
+  border-color: crimson;
+}
+
+.input-field .show-hide {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: lightgray;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.field .error {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  color: #f6fa70;
+  font-size: 13px;
+  display: none;
+}
+
+.invalid .error {
+  display: flex;
+}
+
+.error .error-icon {
+  margin-right: 6px;
+  font-size: 15px;
+}
+
+.create-password .error {
+  align-items: flex-start;
+}
+
+.create-password .error-icon {
+  margin-top: 4px;
+}
+
+.button {
+  margin: 25px 0 6px;
+}
+
+.button input {
+  color: var(--light-color);
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.button input:hover {
+  background-color: #f6fa70;
+  color: crimson;
+}

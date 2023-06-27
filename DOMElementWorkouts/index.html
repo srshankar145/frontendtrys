@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM trying</title>
+    <style>
+      * {
+        margin: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #fcaeae;
+        color: #ff6666;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      input {
+        color: #ff6666;
+        border: 1px solid rgb(235, 235, 134);
+      }
+
+      input::placeholder {
+        color: crimson;
+        font-style: oblique;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input
+        type="text"
+        class="firstName"
+        id="fName"
+        placeholder="Enter your First Name"
+      />
+      <br />
+      <br />
+      <input
+        type="text"
+        class="lastName"
+        id="lName"
+        placeholder="Enter your Last Name"
+      />
+      <p class="first paragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veniam
+        totam eaque quisquam tempora porro?
+      </p>
+      <p class="second paragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quidem
+        quae nobis delectus. Culpa, laborum nihil? Nobis praesentium aperiam
+        dolorem?
+      </p>
+      <p class="third paragraph">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+        autem suscipit vero explicabo eaque laborum dolores. Sapiente ut itaque
+        corporis aut est quos magni error!
+      </p>
+      <br />
+
+      <!-- Example2 -->
+      <div id="box">
+        Im inside Text Box
+        <div>Im in Element Node 1</div>
+        <div>Im in Element Node 2</div>
+      </div>
+
+      <!-- Example3 -->
+      <div id="box-wrapper">
+        <div class="box" name="box">box 1</div>
+        <div class="box" name="box">box 2</div>
+        <div class="box" name="box">box 3</div>
+        <div class="box" name="box">box 4</div>
+      </div>
+
+      <!-- Example 4 -->
+      <div id="multielements">
+        <h3>This is an H3 Element</h3>
+        <div class="element2">Inside the div container for example 4</div>
+        <span> A small text used for figcaption</span>
+      </div>
+
+      <!-- No Example 5 for HTML since its purely Javascript example -->
+
+      <!-- Example 6 adding a new list item from javascript.-->
+      <ul id="myList">
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Cooldrinks</li>
+        <li>Juiceeeu</li>
+      </ul>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

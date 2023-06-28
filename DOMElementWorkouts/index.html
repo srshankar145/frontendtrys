@@ -58,7 +58,7 @@
       <br />
 
       <!-- Example2 -->
-      <div id="box">
+      <div id="txtBox">
         Im inside Text Box
         <div>Im in Element Node 1</div>
         <div>Im in Element Node 2</div>
@@ -88,6 +88,44 @@
         <li>Cooldrinks</li>
         <li>Juiceeeu</li>
       </ul>
+
+      <!-- Example 8 using textContent property -->
+      <p id="txtChange" onclick="chgText()">
+        This paragraph can be changed using textcontent property
+      </p>
+
+      <!-- Example 9 getAttribute setAttribute -->
+      <div class="passContainer" style="position: relative">
+        <input
+          type="text"
+          placeholder="Enter your Password"
+          id="passwordfld"
+          style="padding: 10px"
+        />
+        <img
+          src="Eye_Flat.svg"
+          style="
+            height: 50px;
+            width: 50px;
+            left: 190px;
+            bottom: 5px;
+            position: absolute;
+          "
+          alt=""
+        />
+      </div>
+
+      <div class="testattribute">
+        <a href="https://google.com" target="_blank" id="myAnchor">
+          Opening a Google Website</a
+        >
+        <p id="siteName"></p>
+      </div>
+
+      <!-- 2 ways to retrieve attributes -->
+      <div class="custom_data">
+        <div id="rtr-data" data-msg="haimsg">Lorem Ipsum</div>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>

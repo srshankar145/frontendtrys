@@ -2,9 +2,9 @@
 // fstPara.style.backgroundColor = "#FFEADD";
 
 const allPara = document.querySelectorAll(".paragraph");
-// allPara.style.backgroundColor = "#FFEADD"; //will return error since querySelectorAll is nodelist
+//  allPara.style.backgroundColor = "yellow"; //will return error since querySelectorAll is nodelist
 //so we have to access it using index.
-console.log(allPara.length);
+console.log("all Para Length:", allPara.length);
 // allPara[0].style.backgroundColor = "#FFEADD";
 // allPara[1].style.backgroundColor = "red";
 // allPara[1].style.color = "yellow";
@@ -16,13 +16,14 @@ for (i = 0; i < allPara.length; i++) {
 }
 
 //tried using getElementById   === for Example 2
-const box = document.getElementById("box");
-console.log("main div element", box);
-console.log("Children Nodes: ", box.children); //Children is HTMLCollection
-console.log("ChildNodes:", box.childNodes); //ChildNodes is nodelist
+const txtBox = document.getElementById("txtBox");
+console.log("main div element", txtBox);
+console.log("Children Nodes: ", txtBox.children); //Children is HTMLCollection
+console.log("ChildNodes:", txtBox.childNodes); //ChildNodes is nodelist
+console.log("ChildNodes 5th:", txtBox.childNodes[4]); //Accessing childnodes.
 
 //tried using querySelectorAll for same id
-const boxCollection = document.querySelectorAll("#box");
+const boxCollection = document.querySelectorAll("#txtBox");
 console.log("Trying with HTML Colletion", boxCollection);
 console.log("HTML Colletion children", boxCollection.children);
 console.log("HTML Colletion children", boxCollection.childNodes);
@@ -91,8 +92,47 @@ myList.insertBefore(liItem, myList.children[3]);
 
 //Example 7 remove element.
 const rmEle = document.querySelector(".third");
-rmEle.remove(); //Will remove the third paragraph
+// rmEle.remove(); //Will remove the third paragraph
 
-const rmdiv2 = document.getElementById("box");
+const rmdiv2 = document.getElementById("txtBox");
 // rmdiv2.remove(rmdiv2.firstElementChild);
-rmdiv2.parentElement.removeChild(rmdiv2);
+// rmdiv2.parentElement.removeChild(rmdiv2);
+
+//Example 8 change text
+function chgText() {
+  document.getElementById("txtChange").textContent =
+    "New text added with seagreen color";
+  document.getElementById("txtChange").style.color = "seagreen";
+}
+
+//Example 9 getatrribute setAttribute
+const myPass = document.getElementById("passwordfld");
+const myEye = document.querySelector("img");
+
+myEye.addEventListener("click", setPassword);
+function setPassword() {
+  let myAttr1 = myPass.getAttribute("type");
+  // console.log(myAttr1);
+  if (myAttr1 === "password") {
+    myPass.setAttribute("type", "text");
+  } else {
+    myPass.setAttribute("type", "password");
+  }
+  console.log("myAttribute = ", myPass.getAttribute("type"));
+}
+
+//show what passed to the URL
+const myAnchor = document.getElementById("myAnchor");
+let text1 = myAnchor.getAttribute("href");
+document.getElementById("siteName").innerHTML = text1;
+
+// 2 ways to retrieve attributes
+// const rtrData = document.getElementById("rtrdata");
+// const rtrData = document.querySelector("#rtrdata");
+
+const rtrdata2 = document.getElementById("rtr-data");
+console.log(rtrdata2);
+
+//method 1
+console.log(rtrdata2.dataset.id);
+console.log(rtrdata2.dataset.msg);

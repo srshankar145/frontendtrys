@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Bona+Nova:regular,italic,700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  border: 2px solid seagreen;
+  height: 100vh;
+  background-color: #080930;
+  font-family: "Bona Nova", sans-serif;
+  font-size: 18px;
+}
+
+.main-container {
+  border: 2px solid snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.logocont img {
+  margin-left: -8rem;
+}
+
+.main-menu {
+  /* border: 2px solid seashell; */
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.main-menu a {
+  /* border: 2px solid skyblue; */
+  display: flex;
+  text-decoration: none;
+  margin: 0 1rem;
+  color: whitesmoke;
+}
+
+.ph-caret-down {
+  margin: 0 0.25rem;
+}
+
+.right-container {
+  display: flex;
+  margin-right: -11rem;
+}
+
+.login {
+  color: whitesmoke;
+  /* margin: 0 1rem; */
+}
+
+button {
+  margin: 0 3rem 0 1rem;
+  padding: 0.25rem 1rem;
+}

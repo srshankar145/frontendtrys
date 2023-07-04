@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Rental Applicattion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-heading">Online Rental Application</div>
+      <div class="sub-heading">Personal Details</div>
+      <div class="horizon-line"></div>
+
+      <div class="form-container">
+        <form action="#" id="persDetsForm" onsubmit="validateForm()">
+          <div class="title">
+            <label for="title" class="leftcont"> Title: </label>
+            <select id="title" onchange="salutation_func(this)">
+              <option value=" "></option>
+              <option value="mr">Mr</option>
+              <option value="mrs">Mr's</option>
+              <option value="miss">Miss</option>
+              <option value="dr">Dr</option>
+              <option value="prof">Professor</option>
+            </select>
+            <p id="error"></p>
+          </div>
+
+          <!-- First Name -->
+          <div class="fname">
+            <label for="fnamebox" class="leftcont"> FirstName: </label>
+            <input type="text" id="fnamebox" class="rightcont" /> <br />
+            <small>
+              <div id="nameError"></div>
+            </small>
+          </div>
+
+          <!-- Last Name -->
+          <div class="lname">
+            <label for="lnamebox" class="leftcont"> LastName: </label>
+            <input type="text" id="lnamebox" class="rightcont" />
+            <p id="error"></p>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="dob">
+            <label for="dob" class="leftcont"> Date of Birth: </label>
+            <input
+              type="date"
+              id="dateofBirth"
+              class="rightcont"
+              value="2023-01-01"
+            />
+            <!-- onchange="validateDob(this)" -->
+            <p id="error"></p>
+          </div>
+
+          <!-- Gender -->
+          <div class="gender-container">
+            <label for="gender" class="leftcont"> Choose your Gender: </label>
+            <div class="male gender_dts">
+              <input type="radio" id="male" name="gender" />
+              <label for="male" class="rightcont"> Male </label>
+            </div>
+
+            <div class="female gender_dts">
+              <input type="radio" id="female" name="gender" />
+              <label for="female" class="rightcont"> Female </label>
+            </div>
+
+            <div class="trans gender_dts">
+              <input type="radio" id="trans" name="gender" />
+              <label for="trans" class="rightcont"> Transgender </label>
+            </div>
+
+            <div class="undisclose gender_dts">
+              <input type="radio" id="undisclose" name="gender" />
+              <label for="undisclose" class="rightcont"> Not Disclose </label>
+            </div>
+
+            <p id="error"></p>
+          </div>
+
+          <!-- Martial Status -->
+          <div class="marital_status">
+            <label for="marital_status" class="leftcont">
+              Martial Status:
+            </label>
+            <select id="marital_status">
+              <option value="married">Married</option>
+              <option value="single">Single</option>
+              <option value="Divorce">Divorce</option>
+              <option value="others">Not Disclosed</option>
+            </select>
+            <p id="error"></p>
+          </div>
+
+          <!-- Mobile Phone -->
+          <div class="mobile">
+            <label for="mobile_Number" class="leftcont"> Mobile: </label>
+            <input type="number" id="country-code" class="country_code" />
+            <input
+              type="tel"
+              id="mobile_Number"
+              class="rightcont"
+              min="5"
+              max="10"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder="111-222-3333"
+            />
+            <p id="error"></p>
+          </div>
+
+          <!-- Blood Group -->
+          <div class="blood-group">
+            <label for="blood-group" class="leftcont"> Blood Group: </label>
+            <select id="blood-group" class="rightcont">
+              <option value="O-">O-</option>
+              <option value="O+">O+</option>
+              <option value="A-">A-</option>
+              <option value="A+">A+</option>
+              <option value="B-">B-</option>
+              <option value="B+" selected>B+</option>
+              <option value="AB-">AB-</option>
+              <option value="AB+">AB+</option>
+            </select>
+            <p id="error"></p>
+          </div>
+
+          <button class="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

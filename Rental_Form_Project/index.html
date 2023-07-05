@@ -13,10 +13,10 @@
       <div class="horizon-line"></div>
 
       <div class="form-container">
-        <form action="#" id="persDetsForm" onsubmit="validateForm()">
+        <form id="persDetsForm" onsubmit="validateForm()">
           <div class="title">
             <label for="title" class="leftcont"> Title: </label>
-            <select id="title" onchange="salutation_func(this)">
+            <select id="title" class="rightcont">
               <option value=" "></option>
               <option value="mr">Mr</option>
               <option value="mrs">Mr's</option>
@@ -24,7 +24,9 @@
               <option value="dr">Dr</option>
               <option value="prof">Professor</option>
             </select>
-            <p id="error"></p>
+            <small>
+              <div id="salError"></div>
+            </small>
           </div>
 
           <!-- First Name -->
@@ -53,11 +55,13 @@
               value="2023-01-01"
             />
             <!-- onchange="validateDob(this)" -->
-            <p id="error"></p>
+            <small>
+              <div id="dobError"></div>
+            </small>
           </div>
 
           <!-- Gender -->
-          <div class="gender-container">
+          <div id="gender-container">
             <label for="gender" class="leftcont"> Choose your Gender: </label>
             <div class="male gender_dts">
               <input type="radio" id="male" name="gender" />
@@ -79,7 +83,9 @@
               <label for="undisclose" class="rightcont"> Not Disclose </label>
             </div>
 
-            <p id="error"></p>
+            <small>
+              <div id="genderError"></div>
+            </small>
           </div>
 
           <!-- Martial Status -->
@@ -88,6 +94,7 @@
               Martial Status:
             </label>
             <select id="marital_status">
+              <option value=""></option>
               <option value="married">Married</option>
               <option value="single">Single</option>
               <option value="Divorce">Divorce</option>

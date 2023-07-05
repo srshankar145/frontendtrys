@@ -84,7 +84,7 @@ body {
   margin: 0 0.35rem;
 }
 
-.gender-container .male {
+#gender-container .male {
   /* border: 2px solid slateblue; */
   margin-left: -0.5rem;
 }
@@ -95,18 +95,18 @@ body {
 }
 
 /* Entire gender container */
-.gender-container {
+#gender-container {
   /* border: 2px solid slateblue; */
   width: 50vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   /* margin-right: 5rem; */
 }
 
 /* gender main label  */
-.gender-container .leftcont {
+#gender-container .leftcont {
   margin-right: 1.25rem;
   /* border: 2px solid brown; */
 }
@@ -133,13 +133,30 @@ body {
   margin-right: 2.5rem;
 }
 
-#nameError {
+#nameError,
+#salError,
+#dobError {
   font-size: 0.75rem;
   color: crimson;
   margin-left: 15.5rem;
 }
+
+#genderError {
+  font-size: 0.75rem;
+  color: crimson;
+  justify-content: center;
+  margin-left: 21rem;
+}
+
+#undisclose:focus {
+  border-color: seagreen;
+  background-color: seagreen;
+}
+
 .success {
+  font-size: 0.75rem;
   border: 2px solid green;
+  color: green;
 }
 
 button {

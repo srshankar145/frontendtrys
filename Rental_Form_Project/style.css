@@ -94,6 +94,11 @@ body {
   margin: 0 0.2rem;
 }
 
+input,
+select {
+  border: 1px solid slateblue;
+}
+
 /* Entire gender container */
 #gender-container {
   /* border: 2px solid slateblue; */
@@ -135,7 +140,9 @@ body {
 
 #nameError,
 #salError,
-#dobError {
+#dobError,
+#phError,
+#marstaError {
   font-size: 0.75rem;
   color: crimson;
   margin-left: 15.5rem;

@@ -13,7 +13,11 @@
       <div class="horizon-line"></div>
 
       <div class="form-container">
-        <form id="persDetsForm" onsubmit="validateForm()">
+        <form
+          id="persDetsForm"
+          onsubmit="validateForm(event)"
+          autocomplete="off"
+        >
           <div class="title">
             <label for="title" class="leftcont"> Title: </label>
             <select id="title" class="rightcont">
@@ -32,7 +36,13 @@
           <!-- First Name -->
           <div class="fname">
             <label for="fnamebox" class="leftcont"> FirstName: </label>
-            <input type="text" id="fnamebox" class="rightcont" /> <br />
+            <input
+              type="text"
+              id="fnamebox"
+              class="rightcont"
+              autocomplete="off"
+            />
+            <br />
             <small>
               <div id="nameError"></div>
             </small>
@@ -41,18 +51,24 @@
           <!-- Last Name -->
           <div class="lname">
             <label for="lnamebox" class="leftcont"> LastName: </label>
-            <input type="text" id="lnamebox" class="rightcont" />
+            <input
+              type="text"
+              id="lnamebox"
+              class="rightcont"
+              autocomplete="off"
+            />
             <p id="error"></p>
           </div>
 
           <!-- Date of Birth -->
           <div class="dob">
-            <label for="dob" class="leftcont"> Date of Birth: </label>
+            <label for="dateofBirth" class="leftcont"> Date of Birth: </label>
             <input
               type="date"
               id="dateofBirth"
               class="rightcont"
               value="2023-01-01"
+              autocomplete="off"
             />
             <!-- onchange="validateDob(this)" -->
             <small>
@@ -100,23 +116,32 @@
               <option value="Divorce">Divorce</option>
               <option value="others">Not Disclosed</option>
             </select>
-            <p id="error"></p>
+            <small>
+              <div id="marstaError"></div>
+            </small>
           </div>
 
-          <!-- Mobile Phone -->
+          <!-- Mobile Phone  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
           <div class="mobile">
             <label for="mobile_Number" class="leftcont"> Mobile: </label>
-            <input type="number" id="country-code" class="country_code" />
+            <input
+              type="number"
+              id="country-code"
+              class="country_code"
+              autocomplete="off"
+            />
             <input
               type="tel"
               id="mobile_Number"
               class="rightcont"
-              min="5"
+              min="7"
               max="10"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               placeholder="111-222-3333"
+              autocomplete="off"
             />
-            <p id="error"></p>
+            <small>
+              <div id="phError"></div>
+            </small>
           </div>
 
           <!-- Blood Group -->
@@ -132,10 +157,9 @@
               <option value="AB-">AB-</option>
               <option value="AB+">AB+</option>
             </select>
-            <p id="error"></p>
           </div>
 
-          <button class="submit">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>

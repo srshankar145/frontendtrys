@@ -3,22 +3,44 @@ let showNmError = document.getElementById("nameError");
 let showSalError = document.getElementById("salError");
 let showDobError = document.getElementById("dobError");
 let showGenError = document.getElementById("genderError");
+let showPhError = document.getElementById("phError");
+let showMstaError = document.getElementById("marstaError");
 
 function salutation_func(sel) {
   var salValue = document.getElementById("title").value;
   if (salValue == " ") {
-    console.log("");
+    console.log("blank value . chose one title");
     showSalError.textContent = "blank value.. Pls choose one.";
   } else {
     showSalError.textContent = "";
+    document.getElementById("title").classList.add("success");
     // console.log("you selected: ", sel.options[sel.selectedIndex].text);
     // this will show you the selected option text content inside the select.option html tag
-    document.getElementById("title").classList.add("success");
   }
+
+  document.getElementById("title").addEventListener("change", (event) => {
+    showSalError.textContent = "";
+  });
 }
 
-function validateForm() {
-  // preventDefault();
+function martialSta_Check(sel) {
+  var mstatus = document.getElementById("marital_status").value;
+  if (mstatus == "") {
+    console.log("blank value choose one status");
+    showMstaError.textContent = "blank status.. Pls choose single.";
+  } else {
+    showMstaError.textContent = "";
+    document.getElementById("marital_status").classList.add("success");
+  }
+  document
+    .getElementById("marital_status")
+    .addEventListener("change", (event) => {
+      showMstaError.textContent = "";
+    });
+}
+
+function validateForm(event) {
+  event.preventDefault();
 
   const firstName = document.getElementById("fnamebox").value;
   const nameFormat = /^[a-zA-Z.]*$/g;
@@ -36,10 +58,12 @@ function validateForm() {
     .getElementById("title")
     .addEventListener("change", salutation_func(this));
 
-  // document.getElementById("gender").addEventListener;
   // genderCheck();
   validateGen();
   validateTele();
+  document
+    .getElementById("marital_status")
+    .addEventListener("change", martialSta_Check(this));
 }
 
 // Add if keyup or kerreleased functionality for the same date of birth validation.
@@ -47,19 +71,13 @@ document.getElementById("dateofBirth").addEventListener("change", function () {
   const dateofBirth = document.getElementById("dateofBirth").value;
   console.log("Date of Birth: ", dateofBirth);
   if (dateofBirth >= "2010-01-01") {
-    // console.log("Date of birth should be before Jan-2000");
     showDobError.textContent = "Uneligibile for rent. Age above 25 allowed";
   } else {
-    // console.log("You are Elgible for rent.");
     showDobError.textContent = "";
     // showDobSuccess.textContent = "You are Elgible for rent.";
     document.getElementById("dateofBirth").classList.add("success");
   }
 });
-
-// if (document.querySelector('input[name="gender"]:checked') == null) {
-//   window.alert("You need to choose an option!");
-// }
 
 function genderCheck() {
   var gender = document.getElementsByName("gender");
@@ -77,9 +95,6 @@ function genderCheck() {
       document.getElementsByName("gender")[3].focus();
     }
   }
-  // window.alert("You need to choose an option!");
-  // document.getElementById("undisclose").focus();
-
   console.log("coming out of loop");
   // return false;
 }
@@ -93,10 +108,9 @@ function validateGen() {
     if (radios[i].checked) formValid = true;
     i++;
   }
-
   if (!formValid) {
     document.getElementById("genderError").innerHTML =
-      "Please select your gender";
+      "Please choose one option";
     return false;
   } else {
     document.getElementById("genderError").innerHTML = "";
@@ -115,15 +129,29 @@ for (var i = 0; i < radios.length; i++) {
 function validateTele() {
   var countryCode = document.getElementById("country-code").value;
   var phoneNumber = document.getElementById("mobile_Number").value;
+  var phNumPattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
 
-  var phoneNumberPattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
-
-  if (!phoneNumberPattern.test(phoneNumber)) {
-    document.getElementById("error").innerHTML =
-      "Please enter a valid phone number";
+  if (!phNumPattern.test(phoneNumber)) {
+    showPhError.textContent = " Enter valid phone no";
     return false;
   } else {
-    document.getElementById("error").innerHTML = "";
-    return true;
+    showPhError.textContent = "";
   }
+
+  phoneNumber = formatPhoneNumber(phoneNumber);
+  return true;
 }
+
+function formatPhoneNumber(phoneNumberString) {
+  var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return "(" + match[1] + ") " + match[2] + "-" + match[3];
+  }
+  return null;
+}
+
+// function updatePhoneNumber() {
+//   var phoneNumber = document.getElementById("mobile_Number");
+//   phoneNumber.value = formatPhoneNumber(phoneNumber.value);
+// }

@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Rental Applicattion</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   </head>
   <body>
     <div class="main-container">
@@ -123,23 +132,22 @@
 
           <!-- Mobile Phone  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
           <div class="mobile">
-            <label for="mobile_Number" class="leftcont"> Mobile: </label>
-            <input
+            <label for="phone" class="leftcont"> Mobile: </label>
+            <!-- <input
               type="number"
               id="country-code"
               class="country_code"
               autocomplete="off"
-            />
+            /> -->
             <input
+              id="phone"
               type="tel"
-              id="mobile_Number"
-              class="rightcont"
-              min="7"
-              max="10"
+              name="phone"
               placeholder="111-222-3333"
-              autocomplete="off"
+              class="rightcont"
             />
             <small>
+              <!-- <div class="alert alert-info"></div> -->
               <div id="phError"></div>
             </small>
           </div>

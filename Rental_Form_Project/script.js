@@ -6,6 +6,13 @@ let showGenError = document.getElementById("genderError");
 let showPhError = document.getElementById("phError");
 let showMstaError = document.getElementById("marstaError");
 
+//Ading international format
+const phoneInputField = document.querySelector("#phone");
+const phoneInput = window.intlTelInput(phoneInputField, {
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
 function salutation_func(sel) {
   var salValue = document.getElementById("title").value;
   if (salValue == " ") {
@@ -58,12 +65,20 @@ function validateForm(event) {
     .getElementById("title")
     .addEventListener("change", salutation_func(this));
 
+  document.getElementById("fnamebox").addEventListener("change", (event) => {
+    showNmError.textContent = "";
+  });
+
   // genderCheck();
   validateGen();
   validateTele();
   document
     .getElementById("marital_status")
     .addEventListener("change", martialSta_Check(this));
+  // updatePhoneNumber();
+  document.getElementById("phone").addEventListener("change", (event) => {
+    showPhError.textContent = "";
+  });
 }
 
 // Add if keyup or kerreleased functionality for the same date of birth validation.
@@ -71,7 +86,7 @@ document.getElementById("dateofBirth").addEventListener("change", function () {
   const dateofBirth = document.getElementById("dateofBirth").value;
   console.log("Date of Birth: ", dateofBirth);
   if (dateofBirth >= "2010-01-01") {
-    showDobError.textContent = "Uneligibile for rent. Age above 25 allowed";
+    showDobError.textContent = "Uneligibile for rent. Age above 20 allowed";
   } else {
     showDobError.textContent = "";
     // showDobSuccess.textContent = "You are Elgible for rent.";
@@ -79,6 +94,7 @@ document.getElementById("dateofBirth").addEventListener("change", function () {
   }
 });
 
+// This function not used.
 function genderCheck() {
   var gender = document.getElementsByName("gender");
   const undisclose = document.getElementById("undisclose");
@@ -118,7 +134,7 @@ function validateGen() {
   }
 }
 
-// Clear the error message when a radio button is clicked
+// Clear the error message when any gender button is clicked
 var radios = document.getElementsByName("gender");
 for (var i = 0; i < radios.length; i++) {
   radios[i].addEventListener("click", function () {
@@ -126,9 +142,9 @@ for (var i = 0; i < radios.length; i++) {
   });
 }
 
+// const info = document.querySelector(".alert-info");
 function validateTele() {
-  var countryCode = document.getElementById("country-code").value;
-  var phoneNumber = document.getElementById("mobile_Number").value;
+  var phoneNumber = document.getElementById("phone").value;
   var phNumPattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
 
   if (!phNumPattern.test(phoneNumber)) {
@@ -136,22 +152,6 @@ function validateTele() {
     return false;
   } else {
     showPhError.textContent = "";
+    return true;
   }
-
-  phoneNumber = formatPhoneNumber(phoneNumber);
-  return true;
 }
-
-function formatPhoneNumber(phoneNumberString) {
-  var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
-  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-  if (match) {
-    return "(" + match[1] + ") " + match[2] + "-" + match[3];
-  }
-  return null;
-}
-
-// function updatePhoneNumber() {
-//   var phoneNumber = document.getElementById("mobile_Number");
-//   phoneNumber.value = formatPhoneNumber(phoneNumber.value);
-// }

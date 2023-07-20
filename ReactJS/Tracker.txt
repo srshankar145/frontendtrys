@@ -1,0 +1,162 @@
+Watch Codevolution ReactJS Tutorial for Begineers playlist. 
+
+What is ReactJS ?
+-----------------
+
+1. ReactJs ia a Open source library not a framework.
+2. Focus only on UI.
+3. Its primary focus is building User Interfaces.
+4. Rich ecosystem.
+
+
+Why Learn ReactJS ?
+-----------------
+1. Project created and maintained by Facebook
+2. Huge Community support. 
+3. In Demand SkillSet
+
+Component Based Architecture.
+ In react we are break down your application into small parts which can then be composed to make More complex UI.
+ Normally a simple website comprises of Header, SideNav , MainContent and Footer. Now we are considering this as each component like Header component, Nav component, main component and footer component like that.
+ 
+ 1. Reusable Code - Suppose we have a component for Article on react. We can use this same component on Angular or VUE frameworks by simply passing the right data into the article component. For enterprises the ability to reuse is huge plus.
+
+ 2. React is Declarative. - we need to tell the React what we want and react will with the help of React DOM Library will built the Actual UI. This is declarative paradigm. 
+
+ Declarative Paradigm  = 
+ Imperative Paradigm  = 
+
+ 3. React will handle efficiently   upating and rendering of the components 
+ 4. DOM Updates which are expensive operation is handled gracefully in REACt. 
+
+5. React doesnt know or care about the rest of the technologies we are using for the project say in backend.
+6. Seamlessly integrate react into any of your applications.
+7. Either portion of the page. or an complete page. or even an entire application itself , React will fit right in. 
+8. Once get good grasp we have React Native  for mobile applications.
+
+2 methods we can create 
+1. npx create-react-app <projectname>
+2. create-react-app fstreact_proj
+
+npx - package runner. without installing dependencies it allows node to execute or run  the project. 
+package.json is for npm dependencies
+package-lock.json or yarn-lock.json is for yarn dependencies
+
+node modules folder :- 
+where the dependencies are installed. it will generated when you run create react app or npm install.
+
+public folder :- 
+1. manifest.json file is for progessive web apps (PWA) which is not relevant to react project.
+2. index.html file is the only html file in the entire react project we should have.  we are building single page applications so this is where lies on.
+point to note: we are not going to change anything in this index.html file. slight change in head tag may require but definitely body tag should not be touched.
+Only one div tag is there [root] which will paint the browser dynamically using our react script. 
+
+src folder :-
+this is were we work mostly in our development.  
+index.js - starting point of our application.
+app.js =  will contain our componets which we are going to edit.
+app.css =  is for styling.
+app.test.js = is for unit testing. 
+index.css = will applying styles to the body tag.
+
+components explained :
+in react the component refers to the part of User interface.
+one component which contain all the other components is called root component. which is called App.js
+2. components are reusable. the same component can be used to display different properties with different informations. 
+You can have components with .jsx file also. but we use .js components
+
+in react we have 2 component types. 
+1. stateless functional component. 
+2. stateful class component.
+
+1.  functional component or stateless functional component = literally javascript functions. they return HTML which describes the UI. Below example.
+
+function welcome(props) {
+    return <h1> Hello, {props.name} </h1>;
+}
+
+2. class component or stateful class component = are the regular ES6 classes that extend from the react library.  they must contain the render methohd which return the HTML
+
+class Welcome extends React.Component {
+    render() {
+        return <h1> Hello, {this.props.name} </h1>;
+    }
+}
+
+functional Components:
+Just javascript funciton. optionally receive an object of properties (props) and return the HTML(JSX).
+
+Class components:
+are basically ES6 classes. optionally receive an object of properties (props) and return the HTML(JSX). apart from props class component will maintain a private internal state. it means it will maintain some information which is private to that component and use that info to describe user interface.
+
+Functional vs Class Componets.
+when to use functional and when to your class components. 
+
+Functional Components:
+1. simple functions
+2. Use functional components as much as possible.
+3. absence of this keyword while in class component you need to use that. 
+4. Solution without using state.
+5. Mainly responsible for the UI
+6. functional components otherwise called as Stateless/Dumb/Presentational Component.
+
+Class Components:
+-----------------
+1. More feature rich.
+2. Maintain their own private data - State.
+3. Complex UI Logic.
+4. Provide lifecycle hooks.
+5. Other wise called as  Stateful/ Smart/ Container component.
+
+JSX:
+----
+1. javascript XML(JSX) = Extension to javascript language syntax.
+2. With react library we can write XML like codes for elements and components.
+3. JSX have tag name, attributes and children.
+4. Why need JSX - JSX is not necessary to write React apps. but JSX makes your react code Simpler and Elegent.
+5. JSX ultimately transpiles to pure javascript which is understood by all the browsers. 
+
+
+Props with Functional Componet:
+-------------------------------
+1. properties is the optional input that your component can take input from you. Allows the component to be dynamic.
+2. for self closing components you cant add children properties since it will throw error like we did for greet example. <Greet />.. the children props must be inside the proper closing tags. 
+ex: <Greet> <p> This is children props </p> </Greet>
+3. always you should enclose all your contents inside sinlge div container [ex: MainContainer] as like in Greet.js since react will return only one component so we should always enclose within single div container.
+4. Always include  {props.children} if there is children properties inthe main component it will be rendered. if not then {props.children} will stay silent and donot break anything.
+
+Props with Class Component:
+---------------------------
+In class component the properties are available thru {this.props} see Welcome.js
+
+One strict rule about props is props are immutable. Their value cannot be changed. in Greet.js you are trying to assign a name by default to props but it  throws error and  break the application. 
+
+State:
+-----
+1. Every react component which retuns JSX describes the user interface
+2. one way to influence what is render on screen is using Props. the second way should be state of the component.
+3. 
+
+props vs state:
+
+State is nothing but a object that is privately maintained inside a component. State can influence what is rendered in the browser. State can be changed within the component.
+
+setState:
+to keep track of counter value, we initialize state in the constructor. Always use setState method inside the constructor. 
+UI is not rerendering but the state is changing. so never modify the state directly
+in Counter.js , we tried to modify the state directly instead of constructor  "// this.state.count = this.state.count + 1;" it will not render in UI.
+to do that we need to use setState example:
+this.setState({
+      count: this.state.count + 1,
+    });
+
+Rule: never modify the state directly. instead make use of setState. if you try to modify the state directly React will not rerender your component. Only setState will know React to rerender the component
+Also to note: calls to setState are "Asynchronous". 
+Many times we need to only after the state is updated.
+
+setState mehtod has 2 parameters 
+1. state object 
+2. callback function. it will be arrow function
+
+ReactJS VSCode Extensions
+https://www.reddit.com/r/reactjs/comments/rhqd2d/useful_vscode_extension_for_react/

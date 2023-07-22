@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="imgBox">
+        <img
+          src="https://i.postimg.cc/9QH8dVYb/pexels-andrea-piacquadio-3776169.jpg"
+          alt=""
+        />
+      </div>
+      <div class="contentBox">
+        <div class="formBox">
+          <h1>SignUp</h1>
+          <form onsubmit="return validation()">
+            <div class="inputBox">
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                autocomplete="off"
+              />
+            </div>
+            <div class="inputBox">
+              <input type="password" placeholder="Password" id="password" />
+            </div>
+            <div class="inputBox">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                id="cpassword"
+              />
+            </div>
+            <div class="inputBox">
+              <input
+                type="text"
+                id="mobile"
+                placeholder="Mobile"
+                autocomplete="off"
+              />
+            </div>
+            <div class="inputBox">
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                autocomplete="off"
+              />
+            </div>
+            <div class="rememMe">
+              <input type="checkbox" /> <span>Remember Me</span>
+            </div>
+            <div class="actionBox combinedAct">
+              <input type="submit" /> <input type="reset" value="Reset" />
+            </div>
+          </form>
+          <ul class="soc combinedAct">
+            <li><i class="ti ti-brand-facebook"></i></li>
+            <li><i class="ti ti-brand-youtube"></i></li>
+            <li><i class="ti ti-brand-twitter"></i></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

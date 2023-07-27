@@ -1,6 +1,6 @@
-# frontendtrys
+# My Frontend Projects 
 
-My HTML CSS and Javascript projects will be updated here.
+All the HTML CSS and Javascript mini projects are uploaded here. 
 
 # Type of Files:
 

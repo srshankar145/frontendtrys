@@ -1,3 +1,3 @@
 ## TODO App
 
-This app will able to create, edit and Delete tasks. 
+Tried to create app which will create, edit and Delete tasks.  

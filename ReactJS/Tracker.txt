@@ -138,10 +138,11 @@ State:
 3. 
 
 props vs state:
-
+---------------
 State is nothing but a object that is privately maintained inside a component. State can influence what is rendered in the browser. State can be changed within the component.
 
 setState:
+----------
 to keep track of counter value, we initialize state in the constructor. Always use setState method inside the constructor. 
 UI is not rerendering but the state is changing. so never modify the state directly
 in Counter.js , we tried to modify the state directly instead of constructor  "// this.state.count = this.state.count + 1;" it will not render in UI.
@@ -158,5 +159,123 @@ setState mehtod has 2 parameters
 1. state object 
 2. callback function. it will be arrow function
 
+Destrucnting Props and State in react:
+--------------------------------------
+to unpack values from array or properties from objects into dsictinc variables. React destructing props and states into code readability.
+
+there are 2 ways in props to destructure functional component. 
+1. destructure in the functional parameter itself.
+in Greet.js we are just commenting out while declaring Greet function we are just passing props - one parameter. to destructure it we are passing 2 parameters here while declaring itself.(name, heroName) and while using inside html instead of props.name and props.heroName, we are using just name and  heroName.
+
+2. destructure in function body
+const Greet  = props => {
+const {name, heroName} = props ;
+return (
+    <div>
+      <h1>
+        Hello {name} a.k.a {heroName}
+       </h1>      
+    </div>
+)
+}
+
+2 ways in props to destructure class  component. 
+after render(){
+    const { name, heroName } = this.props; = props dstructed here
+    const {state1, state2} = this.state; = state destruced here like  above
+    return(
+        <h1> 
+        Welcome {name} a.k.a {heroName}
+        </h1>
+    )
+}
+
+Event Handling:
+-----------------
+
+See FunctionClick.js and ClassClick.js
+
+Binding Event Handlers:
+-----------------------
+
+why we bind event handlers:  is purely bcoz of the way "this" keyword works in JS. its not bcoz of how react works.
+
+
+Methods as props:
+-----------------------
+
+
+Conditional Rendering:
+-----------------------
+You may need to show or hide some HTML elements based on certain conditions. this is were conditional rendering comes in. 4 opertors are there.
+1. if/else
+2. Element variables
+3. Ternary conditional operator.
+4. short circuit operator.
+
+List Rendering:
+-----------------------
+
+
+List and Keys:
+-----------------------
+We need to include key while creating list of elements.
+they key props are not accessible in the child components. that means you cannot 
+render in HTML (it will not show in HTML page) if you assign a object property 
+as key prop in react.
+keys help React to identify which items have been added, change or removed. 
+
+Styling React Components:
+-----------------------
+1. CSS stylesheet
+2. Inline Styling
+3. CSS modules
+4. CSS in JS Libraries (go for Styled Components)
+
+Basic Form Handling:
+-----------------------
+
+Form Handling Methods:
+-----------------------
+1. Mounting 2. Updating 3. Unmounting 4. Error handling
+
+Mounting lifecycle Method:
+--------------------------
+1. constructor(props) : special function will get called  whenever a new component is created
+constructor used for initializing state and binding event handlers  . 
+You should never make HTTP request within the constructor . it cause side effects.
+
+You have to call special function called super(props). Directly overwriting using this.state.
+
+2. static getDerivedStateFromProps(props, state)
+3. render() - You should never make  change state or interact with DOM or make ajax calls here.
+4. ComponentDidMount() - Invoked immediately after a component and all its children components have been rendered to the DOM
+    Method Execution Order => see LfecycMthd-Comp project 
+        1. Constructor
+        2. getDerivedStateFromProps
+        3. Render 
+        4. ComponentDidMount
+    If children component included then the execution flow will be .
+    1.Parent's Constructor => 2.Parent's getDerivedStateFromProps => 3.Parent's Render => 4. Child's Constructor
+=> 5. Childrens getDerivedStateFromProps => 6. Childrens Render => 7.Childrens ComponentDidMount => 8.Parent's  ComponentDidMount
+
+Component Updating lifecycle Method:
+------------------------------------
+
+1. getDerivedStateFromProps - static method which rarely used in the updating phase.. receives props and state as parameters and has to return either null or object represent the updated state of the component.
+This method is called everytime when component is re-rendered.
+this method is used when the state depends on the props in the component. 
+
+2. shouldComponentUpdate - it dictates if the component should rerender or not. this method is basically for performance optimisation. rarely used lifecycle method as said in react docs.
+
+3. render() - 
+4. getSnapshotBeforeUpdate - called right before the changes from the virtual DOM are to be reflected in the DOM. capture some information from the DOM.
+5. ComponentDidUpdate - called after the render is finished in the rerender cycles. Called by only once in each rerender cycle.
+
 ReactJS VSCode Extensions
 https://www.reddit.com/r/reactjs/comments/rhqd2d/useful_vscode_extension_for_react/
+
+If any doubt on building todoList app check the video: 
+https://www.youtube.com/watch?v=h5crrOsLbpk https://www.youtube.com/@kirupa/videos
+
+https://www.youtube.com/watch?v=MkESyVB4oUw&t=16s - todolist another one

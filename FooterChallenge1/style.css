@@ -64,6 +64,12 @@ footer {
   margin: 15px 0 0 0;
   border-radius: 10px;
   width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title h2 {
+  font-family: "Orbitron";
 }
 
 .desc-container {
@@ -77,14 +83,19 @@ footer {
   border-radius: 10px;
 }
 
-.title h2 {
-  font-family: "Orbitron";
+button {
+  margin: 4rem 1rem 1rem 0;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  border: 0.15rem solid seagreen;
+  border-radius: 0.5rem;
+  background-color: var(--first-color);
+  color: var(--fourth-color);
 }
 
 .links {
   /* border: 2px solid chartreuse; */
   display: flex;
-  font-family: Roboto;
+  font-family: "PT Sans";
   font-size: 16px;
   margin: 0 1rem 1rem 1rem;
   margin-right: 1rem;
@@ -105,7 +116,17 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  /* margin-bottom: 3rem; */
 }
+
+ul {
+  margin-right: 1rem;
+}
+
+ul > li {
+  margin-bottom: 10px;
+}
+
 .link-1 {
   /* border: 2px solid skyblue; */
   padding: 0 10px;
@@ -128,34 +149,47 @@ a {
 }
 
 .bottom-footer {
-  border: 2px solid lightcoral;
+  /* border: 2px solid lightcoral; */
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  margin-top: 3.5rem;
+  margin-top: 6rem;
 }
 
 .left-terms {
   /* border: 2px solid red; */
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
 }
 
-h5:nth-child(1) {
+.terms {
   margin-right: 1rem;
   margin-left: 2rem;
+}
+
+.privacy {
+  margin-right: 1rem;
 }
 
 .copyright {
   margin-right: 2rem;
 }
 
-button {
-  margin: 1rem 1rem 1rem 0;
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
-  border: 0.15rem solid seagreen;
-  border-radius: 0.5rem;
-  background-color: var(--first-color);
-  color: var(--fourth-color);
+@media only screen and (max-width: 769px) {
+  .bottom-footer {
+    margin-top: 9rem;
+  }
+
+  .link-2 {
+    padding: 0 2px;
+  }
+
+  ul {
+    margin-right: 0.25rem;
+  }
+
+  ul > li {
+    margin-bottom: 5px;
+  }
 }

@@ -1,0 +1,157 @@
+ReactJS Tutorial - 19 - Index as Key Anti-pattern
+
+🗝 The "key" prop in React is essential for rendering lists efficiently. It should have a unique value within the list.
+
+🗝 The "key" prop value can be any unique identifier within the list, such as ID or name, but it should not be accessed or used in child components.
+
+🔄 React uses keys to efficiently update the UI when items are added, removed, or changed within a list.
+
+🗝 If your data doesn't have a unique identifier, you can use index as the key, but it's less efficient and should be a last resort.
+
+---
+
+ReactJS Tutorial - 20 - Styling and CSS Basics
+
+In short the video tells:
+inline styling - it is an object with camelCase
+styles modules - applies only to specified component. as it is imported as a variable. so wont apply inside other components...
+where as other styles - apply to all child components.
+
+📚 When styling React components, you have multiple options: regular CSS stylesheets, inline styling, and CSS modules.
+📦 For more advanced styling needs, consider using CSS-in-JS libraries like styled-components.
+🖌 Regular CSS stylesheets are applied by creating a CSS file and importing it into your component. Use the `className` attribute to apply styles.
+🧪 You can conditionally apply classes based on component props or state, allowing dynamic styling.
+✏ Inline styling involves using an object with camel-cased CSS properties as keys and their values as strings.
+🧩 CSS Modules provide locally scoped class names, avoiding CSS conflicts between components.
+🧑‍🎨 This video covers the basics of styling React components, including regular stylesheets, inline styling, and CSS Modules. Advanced CSS-in-JS libraries like styled-components are also available for more complex styling needs.
+
+---
+
+ReactJS Tutorial - 21 - Basics of Form Handling
+
+@vigneshgunasekaran2545 1 year ago (edited)
+
+1. event.target.value -> value
+2. event handler method -> takes event as a parameter
+3. this.setState
+4. value={this.state.var} -> to be in sync
+5. e.preventDefault() - as name suggests
+6. select + option, label, input +text, textarea, submit - tags. value attribute
+
+---
+
+ReactJS Tutorial - 22 - Component Lifecycle Methods
+
+
+ReactJS Tutorial - 26 - Pure Components
+
+@vigneshgunasekaran2545 1 year ago
+PureComponent - renders only if there is a Shallow change b/w values
+Regular component - always renders.
+1. Shallow comparison : primitive - just value; complex - references.
+2. if parent has pureComponent - then child also will not rerender.......
+
+
+ReactJS Tutorial - 27 - memo
+
+PureComponent is used to memoize only class based components and does a shallow comparison of both state and props.Memo on the other hand shallow compares only the props.
+PureComponent - for class components
+React.memo - for functional components
+
+
+ReactJS Tutorial - 28 - Refs
+
+Refs To Input element:
+Ref - to make autofocus
+Steps: 
+1. Create ref – using React.creatRef() and assign it class variable – reference variable
+2. attach to input element using “ref” attribute
+What above step does: makes the input element =  ‘current’ property, in the class variable.
+3. call focus() method on input element. – using the current property
+Types/ways:
+1. React.createRef - uses “current” property - above
+2. callback Ref - without “current” - below
+callback Ref:
+Steps:
+1. create a property with null
+2. on function click, call setter of that property and assign the ‘element’
+3. call focus method – directly from reference variable
+
+
+ReactJS Tutorial - 29 - Refs with Class Components
+
+Refs To class component:	(- referencing childComponents and accessing child methods)
+Actually it is clicking a child component button -  make an input element in child component to receive focus. But code flow has to start/go from parent. 
+1. So 2 reference variables of Ref is created - in parent & child.
+2. in parent, Attach parent ref variable to child component, while calling it.
+3. in child, Attach child ref variable to child’s input element. (normal)
+4. in parent, on click of a button, call a method of parent itself which sets ‘current’ to ‘focus()’ to call child method….. 
+(calling child component methods – by referencing/attaching childComponents  and using ‘current’).
+5. now in child, that called method – will set its current to focus. (normal)
+
+
+ReactJS Tutorial - 30 - Forwarding Refs
+
+Forwarding Refs:		(- referencing childComponents and accessing child elements)
+Automatically forwarding a ref to child components
+In above method, instead of referencing a child component, here we will directly reference the child’s input element.
+Steps:
+1. create reference variable in parent
+2. attach to child component, when calling it.
+React.forwardRef()
+This takes “component” as input. So entire function goes into the parameter.
+use arrow function for the component.
+Every functional component takes ‘props’ as parameter.
+But, when component is passed as parameter to createRef method, it will take ‘ref’ as 2nd parameter.
+Thus ref is being forwarded from parent to child element.
+3. Forward the ref to child’s input element
+4. call focus directly now, from parent ref and current.
+5. nothing else in child, except 3rd step
+
+
+ReactJS Tutorial - 31 - Portals
+@vigneshgunasekaran2545
+
+Portals:
+Way to render children into a DOM node that exists outside of DOM hierarchy of parent component.
+ It provides ability to break out of the “root” (“App” is inside this root) DOM tree itself.
+1st param: jsx/components
+2nd param:  which dom
+Used when needed to display something in a clear view apart from current view.
+
+
+ReactJS Tutorial - 32 - Error Boundary
+
+Static method getDerivedStateFromError is used to render a fallback UI after an error is thrown.
+componentDidCatch is used to log the Error information.
+Error boundary do not catch error in event handlers. so you need to use try catch method.
+no comment
+
+
+ReactJS Tutorial - 33 - Higher Order Components (Part 1)
+
+For incrementing count on clicks,
+this.setState() – will take prevState as a variable. So argument to this method can no longer be a single object,  instead it becomes a function  which takes prevState as a parameter and returns a new state.
+
+ReactJS Tutorial - 34 - Higher Order Components (Part 2)
+
+syntax: enhancedComp = hoc(comp)
+HOC is a function, that takes 1 component as argument and returns enhanced new component.
+In export statement, need to export all the components, that are going to use common code, as that hoc component method.
+Hoc method
+In hoc, we need to pass ‘state & increment method’ as props, so original component can make use of it.
+In components that wanna reuse code:
+Will take from props. So no ‘this. ’ or state variable usages (mean - no local). Export with hoc component.
+Calling these components is normal way.
+
+ReactJS Tutorial - 35 - Higher Order Components (Part 3)
+
+But if u pass props (aka attributes) while calling components, 
+Props will be accessible only for the hoc, and not by the actual component.
+Hoc(component)
+To make accessible in that component, we need to pass from hoc:   using spread operator
+We can also pass variables/values in hoc:
+No change in components. that’s the ideal usage of hoc.
+
+
+ReactJS Tutorial - 36 - Render Props (Part 1)

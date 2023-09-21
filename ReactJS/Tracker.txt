@@ -26,7 +26,7 @@ Component Based Architecture.
  Declarative Paradigm  = 
  Imperative Paradigm  = 
 
- 3. React will handle efficiently   upating and rendering of the components 
+ 3. React will handle efficiently  upating and rendering of the components 
  4. DOM Updates which are expensive operation is handled gracefully in REACt. 
 
 5. React doesnt know or care about the rest of the technologies we are using for the project say in backend.
@@ -53,16 +53,18 @@ Only one div tag is there [root] which will paint the browser dynamically using 
 
 src folder :-
 this is were we work mostly in our development.  
-index.js - starting point of our application.
-app.js =  will contain our componets which we are going to edit.
+index.js - starting point of our application. which specifies root component which has 'App' component- the DOM element controlled by react.
+app.js =  will contain our componets which we are going to edit. responsible for HTML to display in the browser. It represents the 'View' part which we see in the browser.
 app.css =  is for styling.
 app.test.js = is for unit testing. 
 index.css = will applying styles to the body tag.
 
+npm start -> index.html -> Root Dom  node ->  index.js -> ReactDom renders the app component into the Root Dom Node -> App component contains the HTML which is displayed in the browser.
+
 components explained :
 in react the component refers to the part of User interface.
-one component which contain all the other components is called root component. which is called App.js
-2. components are reusable. the same component can be used to display different properties with different informations. 
+one component which contain all the other components is called root component or App Component. Its nothing but  App.js file
+2. components are reusable. the same component can be used with different properties to display different informations. 
 You can have components with .jsx file also. but we use .js components
 
 in react we have 2 component types. 
@@ -75,7 +77,7 @@ function welcome(props) {
     return <h1> Hello, {props.name} </h1>;
 }
 
-2. class component or stateful class component = are the regular ES6 classes that extend from the react library.  they must contain the render methohd which return the HTML
+2. class component or stateful class component = are the regular ES6 classes that extend the component class from the react library.  they must contain the render methohd which inturn return the HTML
 
 class Welcome extends React.Component {
     render() {
@@ -84,7 +86,7 @@ class Welcome extends React.Component {
 }
 
 functional Components:
-Just javascript funciton. optionally receive an object of properties (props) and return the HTML(JSX).
+Just javascript function. optionally receive an object of properties (props) and return the HTML(JSX). Accepts input as properties and return HTML that describes the UI.
 
 Class components:
 are basically ES6 classes. optionally receive an object of properties (props) and return the HTML(JSX). apart from props class component will maintain a private internal state. it means it will maintain some information which is private to that component and use that info to describe user interface.
@@ -92,21 +94,28 @@ are basically ES6 classes. optionally receive an object of properties (props) an
 Functional vs Class Componets.
 when to use functional and when to your class components. 
 
+Components describe a part of the user interface.
+they are re-usbale and can be nested inside other components.
+
 Functional Components:
-1. simple functions
+----------------------
+1. simple functions receiving props and returning declarations 
 2. Use functional components as much as possible.
 3. absence of this keyword while in class component you need to use that. 
-4. Solution without using state.
-5. Mainly responsible for the UI
+4. Forced to think of Solution without having usestate.
+5. functional component tends to be without any complecated logic and Mainly responsible for the UI
 6. functional components otherwise called as Stateless/Dumb/Presentational Component.
 
 Class Components:
 -----------------
 1. More feature rich.
-2. Maintain their own private data - State.
+2. Maintain their own private data also called as  State.
 3. Complex UI Logic.
 4. Provide lifecycle hooks.
-5. Other wise called as  Stateful/ Smart/ Container component.
+5. Other wise called as Stateful/ Smart/ Container component.
+
+Version 16.7 - released the Hooks Concept.
+In class component we need to experience by using state, lifecycle methods and 'this' binding. then only we can know the purpose and advantages of using Hooks.
 
 JSX:
 ----
@@ -115,6 +124,15 @@ JSX:
 3. JSX have tag name, attributes and children.
 4. Why need JSX - JSX is not necessary to write React apps. but JSX makes your react code Simpler and Elegent.
 5. JSX ultimately transpiles to pure javascript which is understood by all the browsers. 
+
+basically each JSX element is syntactic sugar for calling React.createElement and that is why we are importing React library when using JSX. See ClassComponent project Hello.js file you can find the difference btw js and .jsx  
+
+JSX Differences:
+Class -> className
+for -> htmlFor
+camelCase property naming convention instead of  HTML attributes
+    onclick -> onclick
+    tabindex -> tabIndex
 
 
 Props with Functional Componet:
@@ -134,17 +152,24 @@ One strict rule about props is props are immutable. Their value cannot be change
 State:
 -----
 1. Every react component which retuns JSX describes the user interface
-2. one way to influence what is render on screen is using Props. the second way should be state of the component.
-3. 
+2. one way to influence what is render on screen is using Props. the second way to influence should be state of the component.
+3. State is nothing but a object that is privately maintained inside a component. State can influence what is rendered in the browser. State can be changed within the component.
 
 props vs state:
 ---------------
-State is nothing but a object that is privately maintained inside a component. State can influence what is rendered in the browser. State can be changed within the component.
+props                                       State
+1. Props get passed to the component.      State is managed within the component.
+2. Function parameters                     Variables declared within the function body
+3. bcoz parents usually pass props down    Component has full control of the state, so
+   to the child component props are        State can be changed.
+   immutable  
+4. props - functional component            useState Hook - functional components
+   this.props - class component            this.state - class components
 
 setState:
 ----------
 to keep track of counter value, we initialize state in the constructor. Always use setState method inside the constructor. 
-UI is not rerendering but the state is changing. so never modify the state directly
+UI is not rerendering but the state is changing. so never modify the state directly.
 in Counter.js , we tried to modify the state directly instead of constructor  "// this.state.count = this.state.count + 1;" it will not render in UI.
 to do that we need to use setState example:
 this.setState({
@@ -155,11 +180,16 @@ Rule: never modify the state directly. instead make use of setState. if you try 
 Also to note: calls to setState are "Asynchronous". 
 Many times we need to only after the state is updated.
 
+Code has to be executed after the state has been updated? Place that code in the callback function which is the second argument to the setState method.
+
+//Passing props to increfive function in our example Counter.js file
+when you have to update state based on the previous state value, pass in a function as an argument insetad of regular object 
+
 setState mehtod has 2 parameters 
 1. state object 
 2. callback function. it will be arrow function
 
-Destrucnting Props and State in react:
+Destructing Props and State in react:
 --------------------------------------
 to unpack values from array or properties from objects into dsictinc variables. React destructing props and states into code readability.
 
@@ -237,7 +267,18 @@ Basic Form Handling:
 
 Form Handling Methods:
 -----------------------
+
+Component lifecycle Methods:
+----------------------------
 1. Mounting 2. Updating 3. Unmounting 4. Error handling
+
+**Mounting**: when an instance of component is being created and inserted into DOM.
+
+**Updating**: When a component being re-rendered as a result of changes to either its props or state.
+
+**UnMounting:** when a component is being removed from the DOM.
+
+**Error Handling:** when there is an error during rendering, in a lifecycle method, or int he constructor of any child component.
 
 Mounting lifecycle Method:
 --------------------------
@@ -247,9 +288,13 @@ You should never make HTTP request within the constructor . it cause side effect
 
 You have to call special function called super(props). Directly overwriting using this.state.
 
-2. static getDerivedStateFromProps(props, state)
-3. render() - You should never make  change state or interact with DOM or make ajax calls here.
-4. ComponentDidMount() - Invoked immediately after a component and all its children components have been rendered to the DOM
+2. static getDerivedStateFromProps(props, state)- rarely used lifecycle method. Used when the state of the component depends on the changes and props overtime
+a static method doesnt have access to this.keywrod 
+you cannt call this.setstate from this method.
+just you ahve to return an object represents new state of the component. do not cause side effects HTTP reuests
+3. render() - only required method in class component. It simply reads this.prop and this.state and returns the JSX which describe the UI. 
+You should never make  change state or interact with DOM or make ajax calls here.
+4. ComponentDidMount() - called only once in whole lifecycle. Invoked immediately after a component and all its children components have been rendered to the DOM. this method is perfect for interact with DOM or perform any ajax calls to load data.
     Method Execution Order => see LfecycMthd-Comp project 
         1. Constructor
         2. getDerivedStateFromProps
@@ -261,17 +306,158 @@ You have to call special function called super(props). Directly overwriting usin
 
 Component Updating lifecycle Method:
 ------------------------------------
+Methods that are called when an component being rerendered bcoz of changes to either props or state. seeing in the order of invoked.
 
 1. getDerivedStateFromProps - static method which rarely used in the updating phase.. receives props and state as parameters and has to return either null or object represent the updated state of the component.
 This method is called everytime when component is re-rendered.
 this method is used when the state depends on the props in the component. 
 
-2. shouldComponentUpdate - it dictates if the component should rerender or not. this method is basically for performance optimisation. rarely used lifecycle method as said in react docs.
+2. shouldComponentUpdate - it dictates if the component should rerender or not. this method is basically for performance optimisation. rarely used lifecycle method as said in react docs. By default all the class components will rerendered whenever a state changes or props they receive.
+ In this method they will compare the existing props and state values with next props and state values and return true or false to let react know whether the component should update or not. rarely used method
 
 3. render() - 
-4. getSnapshotBeforeUpdate - called right before the changes from the virtual DOM are to be reflected in the DOM. capture some information from the DOM.
-5. ComponentDidUpdate - called after the render is finished in the rerender cycles. Called by only once in each rerender cycle.
+4. getSnapshotBeforeUpdate - called right before the changes from the virtual DOM are to be reflected in the DOM. capture some information from the DOM. Mtehod will either return null or value . retruned value will be passed as third parameter to next method. 
+5. ComponentDidUpdate - called after the render is finished in the rerender cycles. Called by only once in each rerender cycle. this method has 3 parameter, prevProps, prevState, snapshot from previous method.
+You can make ajax calls. decide with prevprop and current props and decide whether to make call ?
 
+UnMounting life cycle:
+
+ComponentWillUnMount - Mtehod is invoked immediately before a component is Unmounted and destroyed. For cleanup tasks we are using this method.
+cancelling any network request, removing event handlers, cancelling any subscriptions and also invalidating timers. 
+Do not call the setState method. bcoz component will not rerender after its unmounted. 
+
+Error Handling life cycle: 
+
+Static getDerivedStateFromError and componentDidCatch
+methods. When there is a error either during rendering, in a lifecycle method, or inthe constructor of any child component.
+
+Advanced ReactJS:
+React Fragments:
+----------------
+Fragments will let you group list of child elements without adding extra nodes to the DOM.
+Instead of div element we use empty tag <> </> (React Fragments)  used to wrap all the components. it will make one node less .
+Either we can use <> </> empty tags or React Fragments  <React.Fragment>  </React.Fragment> both will work.
+
+Pure Components:
+----------------
+Regular vs Pure Components
+
+REgular Component                           Pure Component
+
+Regular component doesnt implement the      A pure component on the other hand implements
+shouldComponentUpdate method. It always     shouldComponentUpdate with a shallow props and  
+returns true by default.                    state comparison.
+
+Read about Shallow Comparsion
+1. Primitive types [string, numbers, boolean] 2. Complex Types [objects, arrays]
+
+By using PureComponent, it will check the state using shallow comparsion on props and state of the component,  if the state or props is changed, it will rerender the component, otherwise not. So using PureComponent will give a performance boost.
+
+shallow comparison of prevState with currentState   
+shallow comparison of prevProps with currentProps
+
+In both above scenarios if there is a difference then only it will rerender the component. 
+If the parent doesnt rerender then the child also doesnt rerender. 
+So if the parent component is pure, make sure the child components are also pure components 
+to avoid unexpected behaviour.
+
+Never mutate the state. always return a new object that reflects the new state.
+
+Memo
+----------------
+PureComponent is for class based component and Memo is for functional component.
+PureComponent is used to memoize only class based components and does a shallow comparison of both state and props.Memo on the other hand shallow compares only the props.
+
+Refs
+----------------
+Refs make possible to access DOM nodes directly within React. For ex. login form, whenever the login form is loaded, the focus should be first directed username input box. 3 Steps
+
+    1. React.createRef()
+    2. attach to input element using “ref” attribute
+    3. call focus() method on input element.
+
+    Callback ref approach: - 4 steps
+    1.React.createRef() method
+    2. create a method that will assign a DOM Element to the ref that we created.
+    3. attach to input element using setCallbackRef property
+    4. call focus method see video for clear detailed step.
+
+
+In createRef approach, we create a reference using React.createRef(),
+we attach a refernce to the element using Ref prop and assigning the property.
+Element accessed using this.ref_variable.current.
+
+In CallbackRef Approach, first create a property and then create the method, that assigns the property
+with the DOM element pass as parameter
+we attach the ref ito an element using method that inturn assigns the element to the property
+here we can access element using just this.ref_variable 
+
+Refs with Class Component:
+--------------------------
+In special circumstances, if you need a Ref to child component from parent component thats possible thru Refs. But that component should be class component. 
+Pls note: Refs cannot be attached to Functional Component.
+
+Forwarding Refs:
+----------------
+a technique to automatically passing a ref to a component thru one of its children.
+
+1. create a ref in the parent component.
+2. attach the ref to the child component using ref attribute.
+3. we need to forward this ref to the  input element in the child component. Forwarding can be achieved using the forward ref method from react library. child component recevies the ref from the parent component and attach it to native input element.
+4. define click handler in the parent component.
+
+Explained in comments - ref forwarding
+Grate video mate!  after two four years of using React i have never had to use React.forwardRef, and the annoying thing is that if you get tested , there will most likely be a Q about this.  
+In  Vanilla Javascript , to get the element you use something like document.getElementById() and then set the focus on it when the button is clicked ( Simple) . 
+I would describe ref , createRef () and forwardRef() as a way  to pass a property down to a child control , and then that child control sets the value to a DOM node, and then the parent can get hold of it and do things , like in this case setting the focus. 
+but the React  team suggest  only to use this when its absolutely  needed and this is an escape hatch.  as its accessing the underlining DOM element not the virtual DOM, things that use this method  will most likely be uncontrolled  components
+
+Ref forwarding is rarely going to use in your application. it might be used in some libraries or HOCs
+
+Portals:
+--------
+React portals provide a way to render children into  a DOM node that exists outside the DOM hierarchy of the parent component. Portal provides the ability to break out of the DOM tree ("Root") inside index.html.
+
+
+Example portal :
+https://codesandbox.io/s/00254q4n6p?file=/src/index.js
+https://codepen.io/gaearon/pen/jGBWpE
+
+
+Error Boundary
+--------------
+
+Error handling phase methods:
+
+static getDerivedStateFromError(error)
+componentDidCatch(error, info)
+
+Runtime errors in rendering which puts the application in broken state. React basically unmounts the whole react component tree. It would be great if we catch the errors anywhere in the component tree and display a fallback UI. This is were Error Boundries will help in picture.
+
+A class component that implements either one or both of the lifecycle methods getDerivedStateFromError or componentDidCatch becomes an Error Boundary.
+
+Static method getDerivedStateFromError is used to render a fallback UI after an error is thrown.
+componentDidCatch is used to log the Error information.
+
+Error boundary do not catch error in event handlers. so you need to use try catch method.
+
+
+Higher Order Components:
+-------------------------
+To share common functionality between components.
+
+HOC is a pattern where a function takes a component as an argument and retuns a new component.
+
+ex:
+
+const newComponent = higherOrderComponent(originalComponent);
+
+const Ironman = withSuit(TonyStark)
+
+
+
+
+********************************************************************************************************
 ReactJS VSCode Extensions
 https://www.reddit.com/r/reactjs/comments/rhqd2d/useful_vscode_extension_for_react/
 
@@ -279,3 +465,6 @@ If any doubt on building todoList app check the video:
 https://www.youtube.com/watch?v=h5crrOsLbpk https://www.youtube.com/@kirupa/videos
 
 https://www.youtube.com/watch?v=MkESyVB4oUw&t=16s - todolist another one
+
+Weather API Redux Project
+Riyadh@145

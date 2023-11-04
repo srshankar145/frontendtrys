@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Example</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <div
+      class="container lg:border-8 lg:border-lime-800 md:border-4 md:border-emerald-500 sm:border-2 sm:border-fuchsia-950"
+    >
+      <div class="text-bgdarkgreen md:text-red-400 text-8xl text-center italic">
+        Website header
+      </div>
+      <h3 class="text-lightskyblue border-4 text-3xl">Sample text in blue</h3>
+      <p class="sm:text-3xl md:text-4xl lg:text-2xl text-blue-600">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores beatae
+        nobis magnam quisquam sequi libero maiores, quod et nesciunt consectetur
+        culpa autem assumenda eos architecto.
+      </p>
+      <button
+        class="py-2 mx-4 my-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+      >
+        Save changes
+      </button>
+
+      <!-- see tailwind.config.js for custom config -->
+      <button class="btn-secondary">Cancel changes</button>
+
+      <!-- Typography examples -->
+      <div>
+        <h2 class="text-2xl">sample h2 text</h2>
+        <h3 class="text-2xl">Title tof h3 text</h3>
+        <h4
+          class="text-xl hover:text-yellow-400 underline decoration-wavy decoration-orange-400"
+        >
+          The quick brown fox jumps over the lazy dog.
+        </h4>
+        <p
+          class="text-base text-amber-600 underline decoration-4 underline-offset-4 decoration-sky-500"
+        >
+          Lorem ipsum dolor sit amet.
+        </p>
+        <div class="whitespace-nowrap">
+          <p class="truncate text-sm text-sky-900">
+            Tailwind lets you conditionally apply utility classes in different
+            states using variant modifiers. For example, use hover:decoration-4
+            to only apply the decoration-4 utility on hover.
+          </p>
+        </div>
+
+        <div class="w-1/3">
+          <p class="break-all">
+            Levator Labii Superioris Alaeque Nasi: a muscle in your face that
+            widens the nostrils and elevates the upper lip, thus allowing you to
+            "snarl". Pneumoultramicroscopicsilicovolcanoconiosis: lung disease
+            from inhaling very fine ash and sand (or “silica dust”); also known
+            as silicosis or the black lung
+          </p>
+        </div>
+
+        <div class="mb-3 text-lime-200 bg-lime-950 pl-3 pb-2">
+          Hover, focus, and other states
+        </div>
+      </div>
+
+      <div class=" ">
+        <div class="w-36 h-16 mx-2 my-2 bg-red-400"></div>
+        <div class="w-36 h-16 mx-2 my-2 bg-green-500">text</div>
+      </div>
+    </div>
+  </body>
+</html>

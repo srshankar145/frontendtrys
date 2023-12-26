@@ -21,6 +21,9 @@ module.exports = {
         widest: '.1em',
         widest: '.25em',
         loosely: '1.0rem'
+      },
+      boxShadow: {
+        'cu':  'rgba(0, 0, 0, 0.1) 0px 4px 12px'
       }
     },
   },

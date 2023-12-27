@@ -5,6 +5,7 @@ module.exports = {
     "./src/**/*.js",
     "./public/**/*.html",
     "./public/**/*.js",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {
@@ -29,6 +30,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/container-queries'),
+    require('flowbite/plugin'),
   ],
 }
 

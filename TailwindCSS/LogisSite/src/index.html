@@ -1,141 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logistics Challenge</title>
-    <link rel="stylesheet" href="/dist/output.css" />
-    <link
-      rel="shortcut icon"
-      href="/assets/img/favicon.png"
-      type="image/x-icon"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logistics Challenge</title>
+  <link rel="stylesheet" href="/dist/output.css" />
+  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
 
-    <!-- GOOGLE FONT  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Icons  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body class="font-mainInter">
-    <header>
-      <!-- <div class="container max-w-screen-xl"> -->
-        <div class="relative">
-          <div
-            class="heroSection absolute top-0 bg-right-top bg-[#0e1d34] pb-16"
-          >
-            <img src="/assets/img/hero-bg.png" alt="" />
-          </div>
-          <!-- -translate-x-1/2 -translate-y-1/2 left-1/2-->
-          <h2 class="absolute text-4xl font-bold text-white top-10 left-20">
-            Logis
-          </h2>
-          <nav class="navbar">
-            <ul class="flex">
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Pricing</li>
-              <li>DropDown</li>
-              <li>Contact</li>
-              <li>Get a Quote</li>
-            </ul>
-          </nav>
-          <div class="absolute leftMain w-1/2">
-            <h3 class="absolute text-5xl font-bold text-white top-28 left-20">
-              Your Lightning Fast Delivery Partner
-            </h3>
-            <p
-              class="absolute text-base max-w-xl leading-6 text-white top-52 left-20 mt-8"
-            >
-              Facere distinctio molestiae nisi fugit tenetur repellat non
-              praesentium nesciunt optio quis sit odio nemo quisquam. eius quos
-              reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam
-              occaecati odio est possimus vel reprehenderit
-            </p>
-            <div class="searchbox absolute top-80 mt-16 ml-20 flex">
-              <input
-                type="text"
-                class="text-left pl-3 pr-80 py-7 rounded-xl"
-                name="zipcode"
-                id="zipcode"
-                placeholder="ZIP code or City"
-              />
-              <input
-                type="button"
-                class="absolute text-white bg-blue-600 rounded-lg right-2 top-3 border-2 px-7 py-4 cursor-pointer"
-                value="Search"
-              />
-            </div>
-            <div class="counters absolute top-96 mt-32 left-20 text-white">
-              <ul class="grid grid-cols-4 gap-20">
-                <li class="text-3xl font-bold">
-                  232
-                  <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
-                    Clients
-                  </p>
-                </li>
-                <li class="text-3xl font-bold">
-                  521
-                  <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
-                    Projects
-                  </p>
-                </li>
-                <li class="text-3xl font-bold">
-                  1453
-                  <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
-                    Support
-                  </p>
-                </li>
-                <li class="text-3xl font-bold">
-                  32
-                  <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
-                    Workers
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="absolute rightMain right-10 top-20">
-            <!-- w-1/2 -->
-            <img
-              src="/assets/img/hero-img.svg"
-              class="h-[32rem] w-[32rem]"
-              alt="Hero Image"
-            />
-            <!-- h-2/3 w-2/3 -->
-          </div>
+    <!-- Flowbite JavaScript Library -->
+  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+
+  <!-- GOOGLE FONT  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+</head>
+
+<body class="font-mainInter">
+  <header>
+    <!-- <div class="container max-w-screen-xl relative"> -->
+    <div class="container h-[42rem]  ">
+      <!-- If any problem to hero section add relative and max-w-screen-xl utilities to make Nav bar work correctly -->
+      <div class="heroSection absolute top-0 bg-right-top bg-[#0e1d34] pb-16">
+        <img src="/assets/img/hero-bg.png" alt="" />
+      </div>
+      <!-- -translate-x-1/2 -translate-y-1/2 left-1/2-->
+      <h2 class="absolute text-4xl font-bold text-white top-10 left-20">
+        Logis
+      </h2>
+      <nav class="navbar">
+        <ul class="flex">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Services</li>
+          <li>Pricing</li>
+          <li>DropDown</li>
+          <li>Contact</li>
+          <li>Get a Quote</li>
+        </ul>
+      </nav>
+      <div class="absolute leftMain w-1/2">
+        <h3 class="absolute text-5xl font-bold text-white top-28 left-20">
+          Your Lightning Fast Delivery Partner
+        </h3>
+        <p class="absolute text-base max-w-xl leading-6 text-white top-52 left-20 mt-8">
+          Facere distinctio molestiae nisi fugit tenetur repellat non
+          praesentium nesciunt optio quis sit odio nemo quisquam. eius quos
+          reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam
+          occaecati odio est possimus vel reprehenderit
+        </p>
+        <div class="searchbox absolute top-80 mt-16 ml-20 flex">
+          <input type="text" class="text-left pl-3 pr-80 py-7 rounded-xl" name="zipcode" id="zipcode"
+            placeholder="ZIP code or City" />
+          <input type="button"
+            class="absolute text-white bg-blue-600 rounded-lg right-2 top-3 border-2 px-7 py-4 cursor-pointer"
+            value="Search" />
         </div>
-      <!-- </div> -->
-    </header>
-    <main>
-      <section class="cards relative mt-96">
-        <div class="container">
-          <h1 class="bg-fuchsia-600">test</h1>
+        <div class="counters absolute top-96 mt-32 left-20 text-white">
+          <ul class="grid grid-cols-4 gap-20">
+            <li class="text-3xl font-bold">
+              232
+              <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
+                Clients
+              </p>
+            </li>
+            <li class="text-3xl font-bold">
+              521
+              <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
+                Projects
+              </p>
+            </li>
+            <li class="text-3xl font-bold">
+              1453
+              <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
+                Support
+              </p>
+            </li>
+            <li class="text-3xl font-bold">
+              32
+              <p class="block mt-4 border-t-2 w-5 pt-4 text-base">
+                Workers
+              </p>
+            </li>
+          </ul>
         </div>
-      </section>
-      <section class="aboutUs"></section>
-      <section class="services"></section>
-      <section class="cta"></section>
-      <section class="dropdowns"></section>
-      <section class="pricing"></section>
-      <section class="testimonials"></section>
-      <section class="faq"></section>
-    </main>
-    <footer>
-      <section class="contact"></section>
-      <section class="copyright"></section>
-    </footer>
-    <section>
-      <div class="bgImg bg-slate-950"></div>
+      </div>
+      <div class="absolute rightMain right-10 top-20">
+        <!-- w-1/2 -->
+        <img src="/assets/img/hero-img.svg" class="h-[32rem] w-[32rem]" alt="Hero Image" />
+        <!-- h-2/3 w-2/3 -->
+      </div>
+    </div>
+    <!-- </div> -->
+  </header>
+  <main>
+    <section class="cards my-4 mx-8 container grid grid-cols-3 gap-4 max-w-screen-xl">
+      <div class="card1 bottom-4 grid grid-cols-2   ">
+        <div class="cardlogo  w-20 mx-2">
+          <i class="fa-solid fa-cart-flatbed-suitcase fa-3x my-4 text-[#A367B1]"></i>
+        </div>
+        <div class="card_details -ml-28 ">
+          <h3 class="font-bold text-xl my-2 text-[#392467]"> Lorem Ipsum </h3> <!--class="my-2"-->
+          <p class="text-sm text-[#5D3587] w-64"> Voluptatum deleniti atque corrupti quos dolores et quas
+            molestias excepturi sint occaecati
+            cupiditate non provident</p> <!--class="w-52"-->
+          <a href="" class="text-sm text-[#5D3587]"> Learn More </a>
+        </div>
+      </div>
+      <div class="card2 bottom-4 grid grid-cols-2 ">
+        <div class="cardlogo  w-20 mx-2">
+          <i class="fa-solid fa-truck fa-3x my-4 text-[#A367B1]"></i>
+        </div>
+        <div class="card_details -ml-28 ">
+          <h3 class="font-bold text-xl my-2 text-[#392467]"> Dolor Sitema </h3>
+          <p class="text-sm text-[#5D3587] w-64"> Minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat
+            tarad limino ata</p>
+          <a href="" class="text-sm text-[#5D3587]"> Learn More </a>
+        </div>
+      </div>
+      <div class="card3  bottom-4 grid grid-cols-2 ">
+        <div class="cardlogo  w-20 mx-2">
+          <i class="fa-solid fa-truck-ramp-box fa-3x my-4 text-[#A367B1]"></i>
+        </div>
+        <div class="card_details -ml-28 ">
+          <h3 class="font-bold text-xl my-2 text-[#392467]"> Dolor Sitema </h3>
+          <p class="text-sm text-[#5D3587] w-64">Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur </p>
+          <a href="" class="text-sm text-[#5D3587]"> Learn More </a>
+        </div>
+      </div>
     </section>
-  </body>
+    <section class="about_us  border-pink-600 ">
+      <div class="container flex items-center mx-8 my-8 max-w-screen-xl"> <!-- grid grid-cols-2 gap-2-->
+        <div class="detailsSec border-pink-600">
+          <h2 class="my-4 text-4xl font-bold text-[#001f8d]"> About Us </h2>
+          <p class="mb-8 ">Dolor iure expedita id fuga asperiores qui sunt consequatur minima. Quidem voluptas deleniti.
+            Sit
+            quia molestiae quia quas qui magnam itaque veritatis dolores. Corrupti totam ut eius incidunt
+            reiciendis veritatis asperiores placeat.</p>
+          <ul>
+            <li class="flex ">
+              <div class="icon mt-4"> <i class="bi bi-diagram-3 text-5xl text-[#001f8d] mr-4 "></i> </div>
+              <div class="explained">
+                <h3 class="text-[#19335c] font-bold text-lg mb-1"> Ullamco laboris nisi ut aliquip consequat</h3>
+                <p class="mb-8">Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+              </div>
+            </li>
+            <li class="flex">
+              <div class="icon mt-4"> <i class="bi bi-fullscreen-exit text-5xl text-[#001f8d] mr-4"></i> </div>
+              <div class="explained">
+                <h3 class="text-[#19335c] font-bold text-lg mb-1"> Magnam soluta odio exercitationem reprehenderi </h3>
+                <p class="mb-8">Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata
+                  redi</p>
+              </div>
+            </li>
+            <li class="flex">
+              <div class="icon mt-4"> <i class="bi bi-broadcast text-5xl text-[#001f8d] mr-4"></i> </div>
+              <div class="explained">
+                <h3 class="text-[#19335c] font-bold text-lg mb-1"> Voluptatem et qui exercitationem </h3>
+                <p class="mb-8"> Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt maxime
+                  veniam </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="imgVidSec   border-lime-700 mx-8 flex items-center "> <!--flex items-center justify-items-start-->
+          <img src="/assets/img/about.jpg" alt="About us Image"
+            class="relative z-0 opacity-90  border-2 border-zinc-700 h-[30rem] w-[125rem]">
+          <a href="https://youtu.be/LXb3EKWsInQ" target="iframe_a" class="absolute right-60 "> <img
+              src="/assets/video.gif" alt="Play video" class=" h-24 w-24  "> </a> <!--bottom-10 right-32-->
+          <!-- <iframe src="https://youtu.be/LXb3EKWsInQ" name="iframe_a"  title="Iframe Example"></iframe> -->
+        </div>
+      </div>
+    </section>
+    <section class="services">
+      <div class="mx-2">
+        <h1 class="text-center relative text-3xl uppercase my-4 font-bold text-[#392467]"> Our Services</h1>
+        <!-- <span
+          class="absolute text-ellipsis text-3xl font-bold text-blue-100 opacity-40 tracking-loosely top-4 left-[25rem] text-center">
+          OUR SERVICES </span> color: rgba(14, 29, 52, 0.06) -->
+
+        <!-- Cards flex flex-row flex-wrap gap-1-->
+        <div class=" grid grid-cols-3  my-8 mx-4 ">
+          <div class="card1 col-span-1  border-[1px] border-zinc-500 w-[24rem] mr-4 mb-4 ml-4  ">
+            <!-- w-2/6 mr-4 ml-4 -->
+            <img src="/assets/img/storage-service.jpg" class="h-80 w-[24rem]" alt="Storage Image">
+            <div class="ml-8">
+              <h3 class="mt-4 font-bold text-[#392467]"> STORAGE </h3>
+              <p class="w-[17rem] my-2"> Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas
+                quisquam repellendus temporibus itaqueofficiis odit </p>
+            </div>
+          </div>
+
+          <div class="card2 col-span-1 border-[1px] border-zinc-500 w-[24rem]  mr-2 mb-4 ml-2  ">
+            <img src="/assets/img/logistics-service.jpg" class="h-80 w-[24rem]" alt="Storage Image">
+            <div class="ml-8">
+              <h3 class="mt-4 font-bold text-[#392467]"> LOGISTICS </h3>
+              <p class="w-[17rem] my-2"> Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas
+                quisquam repellendus temporibus itaqueofficiis odit </p>
+            </div>
+          </div>
+
+          <div class="card3 col-span-1 border-[1px] border-zinc-500 w-[24rem] mr-2 mb-4">
+            <img src="/assets/img/cargo-service.jpg" class="h-80 w-[24rem]" alt="Storage Image">
+            <div class="ml-8">
+              <h3 class="mt-4 font-bold text-[#392467]"> CARGO </h3>
+              <p class="w-[17rem] my-2 mb-4"> Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia
+                voluptas
+                quisquam repellendus temporibus itaqueofficiis odit </p>
+            </div>
+          </div>
+
+          <div class="card4 col-span-1  border-[1px] border-zinc-500 w-[24rem] mr-4 ml-4  "> <!-- w-2/6 mr-4 ml-4 -->
+            <img src="/assets/img/trucking-service.jpg" class="h-80 w-[24rem]" alt="Storage Image">
+            <div class="ml-8">
+              <h3 class="mt-4 font-bold text-[#392467]"> TRUCKING </h3>
+              <p class="w-[19rem] my-2"> Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis
+                sit doloremque oluptatem aut et molestiae ut et nihil </p>
+            </div>
+          </div>
+
+
+          <div class="card5 col-span-1 border-[1px] border-zinc-500 w-[24rem]  mr-2 ml-2  ">
+            <img src="/assets/img/packaging-service.jpg" class="h-80 w-[24rem]" alt="Storage Image">
+            <div class="ml-8">
+              <h3 class="mt-4 font-bold text-[#392467]"> PACKAGING </h3>
+              <p class="w-[19rem] my-2"> Illo consequuntur quisquam delectus praesentium modi dignissimos facere vel cum
+                onsequuntur maiores beatae consequatur magni voluptates</p>
+            </div>
+          </div>
+
+
+          <div class="card6 col-span-1 border-[1px] border-zinc-500 w-[24rem] mr-2">
+            <img src="/assets/img/warehousing-service.jpg" class="h-80 w-[24rem]" alt="Storage Image">
+            <div class="ml-8">
+              <h3 class="mt-4 font-bold text-[#392467]"> WAREHOUSING </h3>
+              <p class="w-[19rem] my-2 mb-4"> Quas assumenda non occaecati molestiae. In aut earum sed natus eatae in
+                vero. Ab modi quisquam aut nostrum unde et qui est non quo nulla </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="xl:container   bg-center border-pink-700 "> <!--h-56-->
+        <div class="relative h-96">
+          <img src="/assets/img/cta-bg.jpg" alt="Call to action image"
+            class="w-full h-auto max-h-full object-cover opacity-70 ">
+          <div class="absolute inset-0 bg-black opacity-80"></div>
+          <div class="absolute inset-0 flex flex-col justify-center items-center  text-white">
+            <h3 class="font-bold text-3xl my-4"> Call To Action </h3>
+            <p class="w-[46rem] text-center mb-4">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum.</p>
+            <a href="" class=""> <button class="hover:bg-cyan-600 border-2 border-lime-200 px-10 py-3 rounded-md"> Call
+                To Action </button> </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="dropdowns">
+      <div class="xl\:container  border-green-700 font-mainInter">
+        <div class="card1 flex my-8 mx-8 mb-20 ">
+          <div class="imgcont mr-6">
+            <img src="/assets/img/features-1.jpg" alt="Delivery image" class="w-[36rem] ">
+          </div>
+          <div class="dtailscont">
+            <h3 class="text-3xl font-bold text-[#001f8d] mb-2"> Voluptatem dignissimos provident quasi corporis
+              voluptates sit assumenda </h3>
+            <p class="my-2 italic w-[90%] text-[#0a0d13]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <ul class="text-[#0a0d13] my-4">
+              <li class="mb-2"><i class="bi bi-check text-[#0d42ff] text-2xl"></i> Ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.</li>
+              <li class="mb-2"><i class="bi bi-check text-[#0d42ff] text-2xl"></i> Duis aute irure dolor in
+                reprehenderit in voluptate velit.</li>
+              <li class="mb-2"><i class="bi bi-check text-[#0d42ff] text-2xl"></i> Ullam est qui quos consequatur eos
+                accusamus.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card2 flex my-8 mx-8 mb-20">
+          <div class="dtailscont my-2">
+            <h3 class="text-[26px] font-semibold text-[#001f8d] mb-2"> Corporis temporibus maiores provident
+            </h3>
+            <p class="my-2 italic w-[90%] text-[#0a0d13]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p class="my-4 w-[95%] text-[#0a0d13]">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+          <div class="imgcont ml-6">
+            <img src="/assets/img/features-2.jpg" alt="Features image" class="w-[65rem] ">
+          </div>
+        </div>
+        <div class="card3 flex my-8 mx-8 mb-20">
+          <div class="imgcont mr-6">
+            <img src="/assets/img/features-3.jpg" alt="caryy out image" class="w-[42rem]">
+          </div>
+          <div class="dtailscont">
+            <h3 class="text-[26px] font-semibold w-[90%] text-[#001f8d] mb-2"> Sunt consequatur ad ut est nulla
+              consectetur reiciendis animi voluptas</h3>
+            <p class="my-2  w-[95%] text-[#0a0d13]">Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia
+              minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.
+            </p>
+            <ul class="text-[#0a0d13] my-4">
+              <li class="mb-2"> <i class="bi bi-check text-[#0d42ff] text-2xl"></i> Ullamco laboris nisi ut aliquip ex
+                ea commodo consequat.
+              </li>
+              <li class="mb-2"> <i class="bi bi-check text-[#0d42ff] text-2xl"></i> Duis aute irure dolor in
+                reprehenderit in voluptate velit.
+              </li>
+              <li class="mb-2"> <i class="bi bi-check text-[#0d42ff] text-2xl"></i> Facilis ut et voluptatem aperiam.
+                Autem soluta ad fugiat.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card4 flex my-8 mx-8 mb-20">
+          <div class="dtailscont">
+            <h3 class="text-[26px] font-semibold text-[#001f8d] mb-2"> Quas et necessitatibus eaque impedit ipsum animi
+              consequatur incidunt in
+            </h3>
+            <p class="my-2 italic  text-[#0a0d13]"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p class="my-4 w-[95%] text-[#0a0d13]"> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+          <div class="imgcont ml-6">
+            <img src="/assets/img/features-4.jpg" alt="Shipping image" class="w-[70rem]">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pricing">
+      <div class="container max-w-screen-xl border-rose-800">
+        <h2 class="text-center text-3xl font-semibold text-[#001973] my-10 relative"> PRICING </h2>
+        <hr
+          class="w-14 h-[3px] my-8  border-0 rounded dark:bg-gray-700 bg-[#0d42ff] absolute translate-x-[37.5rem] -translate-y-[3.75rem]">
+        <div class="cards grid grid-cols-3 mx-10 gap-3">
+          <div class="card1  shadow-cu mr-4 px-8 py-10 rounded-lg mb-8 "> <!--shadow-lg-->
+            <h3 class="font-semibold text-xl text-[#0e1d34] mb-6">Free Plan </h3>
+            <p class="text-[#6c757dcc] text-xl mb-8"><span class="text-[#0d42ff] text-[48px]"> <sup
+                  class="text-[27px] -mr-3">$</sup> 0</span> / month </p>
+            <ul class="text-[#6c757d]">
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Quam adipiscing vitae proin</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Nec feugiat nisl pretium</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Nulla at volutpat diam uteera</li>
+              <li class="line-through "> <i class="bi bi-x text-[#6c757d] text-[24px] mr-1"></i> Pharetra massa massa
+                ultricies</li>
+              <li class="line-through ""><i class=" bi bi-x text-[#6c757d] text-[24px] mr-1"></i>Massa ultricies mi quis
+                hendrerit</li>
+            </ul>
+            <button class="my-6 px-8 py-2 border-2 rounded-md border-blue-800 hover:bg-blue-600 hover:text-white"> Buy
+              Now </button>
+          </div>
+          <div class="card2  shadow-cu mr-4 px-8 py-10 rounded-lg mb-8 border-t-4 border-t-[#0d42ff]">
+            <h3 class="font-semibold text-xl text-[#0e1d34] mb-6">Business Plan </h3>
+            <p class="text-[#6c757dcc] text-xl mb-8"><span class="text-[#0d42ff] text-[48px]"> <sup
+                  class="text-[27px] -mr-3">$</sup> 29</span> / month </p>
+            <ul class="text-[#6c757d]">
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Quam adipiscing vitae proin</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Nec feugiat nisl pretium</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Nulla at volutpat diam uteera</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Pharetra massa massa ultricies</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <button class="my-6 px-8 py-2 border-2 rounded-md border-blue-800 bg-blue-600 text-white"> Buy Now </button>
+          </div>
+          <div class="card3  shadow-cu mr-4 px-8 py-10 rounded-lg mb-8">
+            <h3 class="font-semibold text-xl text-[#0e1d34] mb-6">Developer Plan </h3>
+            <p class="text-[#6c757dcc] text-xl mb-8"><span class="text-[#0d42ff] text-[48px]"> <sup
+                  class="text-[27px] -mr-3">$</sup> 49</span> / month </p>
+            <ul class="text-[#6c757d]">
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Quam adipiscing vitae proin</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Nec feugiat nisl pretium</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Nulla at volutpat diam uteera</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Pharetra massa massa ultricies</li>
+              <li><i class="bi bi-check text-[#059652] text-[24px] mr-1"></i>Massa ultricies mi quis hendrerit</li>
+            </ul>
+            <button class="my-6 px-8 py-2 border-2 rounded-md border-blue-800 hover:bg-blue-600 hover:text-white"> Buy
+              Now </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- <section class="testimonials"></section> -->
+    <section class="faq">
+      <div class="container max-w-screen-xl mt-8 mb-16  ">
+        <h2 class="text-center text-3xl font-semibold text-[#001973] my-10 relative"> FREQUENTLY ASKED QUESTIONS
+        </h2>
+        <hr
+          class="w-14 h-[3px] my-8  border-0 rounded dark:bg-gray-700 bg-[#0d42ff] absolute translate-x-[37.5rem] -translate-y-[3.75rem]">
+
+        <!-- FAQ Starts -->
+        <div class="max-w-screen-xl mx-auto px-5 bg-white min-h-sceen">
+
+          <!-- Item 1 -->
+          <div class="grid divide-y divide-neutral-200 max-w-[54rem] mx-auto mt-8">
+            <div class="pt-2 pb-4 px-3 bg-[#EEF5FF] "> <!-- #e7f1ff  -->
+              <details class="group">
+                <summary
+                  class="flex justify-between items-center text-[18px]  text-[#212529] transition group-open:delay-150 group-open:text-[#0d42ff]  font-semibold cursor-pointer list-none">
+                  <span> <i class="bi bi-question-circle question-icon text-[#0d42ff]  text-[20px] mr-3"></i>
+                    Non consectetur a erat nam at lectus urna duis?
+                  </span>
+                  <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </summary>
+                <p class="text-[#212529] mt-3 group-open:animate-fadeIn ml-9">
+                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                  curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
+                  non.
+                </p>
+              </details>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="pt-2 pb-4 px-3 bg-[#EEF5FF] mt-2 "> <!-- #e7f1ff  -->
+              <details class="group">
+                <summary
+                  class="flex justify-between items-center text-[18px]  text-[#212529] transition group-open:delay-150 group-open:text-[#0d42ff]  font-semibold cursor-pointer list-none">
+                  <span> <i class="bi bi-question-circle question-icon text-[#0d42ff]  text-[20px] mr-3"></i>
+                    Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+                  </span>
+                  <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </summary>
+                <p class="text-[#212529] mt-3 mb-3 group-open:animate-fadeIn ml-9">
+                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
+                  velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
+                  donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                  cursus turpis massa tincidunt dui.
+                </p>
+              </details>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="pt-2 pb-4 px-3 bg-[#EEF5FF] mt-2 "> <!-- #e7f1ff  -->
+              <details class="group">
+                <summary
+                  class="flex justify-between items-center text-[18px]  text-[#212529] transition group-open:delay-150 group-open:text-[#0d42ff]  font-semibold cursor-pointer list-none">
+                  <span> <i class="bi bi-question-circle question-icon text-[#0d42ff]  text-[20px] mr-3"></i>
+                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
+                  </span>
+                  <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </summary>
+                <p class="text-[#212529] mt-3 mb-3 group-open:animate-fadeIn ml-9">
+                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
+                  pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
+                  tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
+                  molestie at elementum eu facilisis sed odio morbi quis
+                </p>
+              </details>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="pt-2 pb-4 px-3 bg-[#EEF5FF] mt-2 "> <!-- #e7f1ff  -->
+              <details class="group">
+                <summary
+                  class="flex justify-between items-center text-[18px]  text-[#212529] transition group-open:delay-150 group-open:text-[#0d42ff]  font-semibold cursor-pointer list-none">
+                  <span> <i class="bi bi-question-circle question-icon text-[#0d42ff]  text-[20px] mr-3"></i>
+                    Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                  </span>
+                  <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </summary>
+                <p class="text-[#212529] mt-3 mb-3 group-open:animate-fadeIn ml-9">
+                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
+                  velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
+                  pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
+                  turpis massa tincidunt dui.
+                </p>
+              </details>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="pt-2 pb-4 px-3 bg-[#EEF5FF] mt-2 "> <!-- #e7f1ff  -->
+              <details class="group">
+                <summary
+                  class="flex justify-between items-center text-[18px]  text-[#212529] transition group-open:delay-150 group-open:text-[#0d42ff]  font-semibold cursor-pointer list-none">
+                  <span> <i class="bi bi-question-circle question-icon text-[#0d42ff]  text-[20px] mr-3"></i>
+                    Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+                  </span>
+                  <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </summary>
+                <p class="text-[#212529] mt-3 mb-3 group-open:animate-fadeIn ml-9">
+                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
+                  ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
+                  adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                </p>
+              </details>
+            </div>
+
+            <!-- Plain FAQ Ends  -->
+          </div>
+    </section>
+  </main>
+  <footer>
+    <section class="contact">
+      <div
+        class="container max-w-screen-xl px-8 py-8 bg-[#0e1d34] grid grid-cols-9 gap-4 justify-evenly  border-fuchsia-900">
+        <div class="area1 col-span-4  border-cyan-300 max-w-[40rem]">
+          <h2 class="text-4xl font-bold text-white">Logis</h2>
+          <p class="text-white w-[32rem] mt-4 mb-6 text-[15px]">Cras fermentum odio eu feugiat lide par naso tierra.
+            Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.
+          </p>
+          <ul class="mt-8">
+            <a href="#"><i
+                class="bi bi-twitter text-gray-400 border-gray-400 border-[1px] rounded-full p-2 mr-2 "></i></a>
+            <a href="#"><i
+                class="bi bi-facebook text-gray-400 border-gray-400 border-[1px] rounded-full p-2 mx-2"></i></a>
+            <a href="#"><i
+                class="bi bi-instagram text-gray-400 border-gray-400 border-[1px] rounded-full p-2 mx-2"></i></a>
+            <a href="#"><i
+                class="bi bi-linkedin text-gray-400 border-gray-400 border-[1px] rounded-full p-2 ml-2"></i></a>
+          </ul>
+        </div>
+
+        <div class="links    border-lime-300"> <!-- auto-cols-min -->
+          <h2 class="text-white mb-4">Useful Links</h2>
+          <ul class="text-[#6c757d] w-48 leading-[1.85rem] text-sm">
+            <li>Home</li>
+            <li>About Us </li>
+            <li>Services</li>
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+
+        <div class="services col-span-2  border-cyan-300 ml-16"> <!-- -ml-36 -->
+          <h2 class="text-white mb-4  font-semibold">Our Services</h2>
+          <ul class="text-[#6c757d] leading-[1.85rem] text-sm  ">
+            <li>Web Design</li>
+            <li>Web Development </li>
+            <li>Product Management</li>
+            <li>Marketing</li>
+            <li>Graphic Design</li>
+          </ul>
+        </div>
+
+        <div class="contactus  col-span-2      border-lime-300">
+          <h2 class="text-white font-semibold"> Contact Us</h2>
+          <p class="text-white pt-4 pb-6 text-sm leading-6">
+            A108 Adam Street <br>
+            New York, NY 535022 <br>
+            United States
+          </p>
+          <h3 class="text-white text-sm mb-1">Phone: +1 5589 55488 55 </h3>
+          <h3 class="text-white text-sm">Email: info@example.com</h3>
+        </div>
+      </div>
+    </section>
+    <section class="copyright">
+      <div class="max-w-screen-xl px-8 pt-8 pb-12 text-[.90rem] bg-[#0e1d34] flex flex-col items-center text-white">
+        <p> © Copyright <span class="font-bold">Logis</span>. All Rights Reserved </p>
+        <p> Designed by TailwindCSS </p>
+      </div>
+    </section>
+  </footer>
+  <section>
+    <div class="bgImg bg-slate-950"></div>
+  </section>
+</body>
+
 </html>

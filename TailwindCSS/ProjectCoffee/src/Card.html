@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!-- After SM breakpoint 640 the card needs the image should be in left side and the name and designation should be in right side flex prop.
+So they write the code in a way that image, name and designation should be stacked up each other in common for all and after SM only the 
+flex property get activated. -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Site</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body>
+    <main
+      class="flex items-center justify-center min-h-screen m-2 border-2 border-red-900"
+    >
+      <!--  sm:py-4  sm:space-y-0 sm:space-x-6 sm:flex sm:items-center -->
+      <div
+        class="py-8 px-8 mx-auto bg-slate-400 rounded-xl shadow-lg space-y-2 max-w-sm sm:py-4 sm:space-y-0 sm:space-x-6 sm:flex sm:items-center"
+      >
+        <!-- sm:mx-0 sm:shrink-0  block -->
+        <img
+          class="mx-auto h-[5.5rem] rounded-full sm:mx-0 sm:shrink-0 block"
+          src="../img_girl.jpg"
+          alt="Woman's Face"
+        />
+
+        <!--sm:text-left -->
+        <div class="text-center space-y-2 sm:text-left">
+          <div class="space-y-0.5">
+            <p class="text-lg text-black font-semibold">Erin Lindford</p>
+            <p class="text-slate-800 font-medium">Product Engineer</p>
+          </div>
+          <!-- -->
+          <button
+            class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+          >
+            Message
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

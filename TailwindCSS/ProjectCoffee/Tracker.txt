@@ -1,0 +1,166 @@
+npm install -D tailwindcss
+npx tailwindcss init
+
+add content to tempalte path 
+ content: ["./src/**/*.{html,js}"],
+
+Add tempate directories to input.css 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+start tailwind css process. 
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+color: #220404;
+
+Home (Hero) Section entire background
+background: #2F1F14
+
+Menu rectangle area background only for links 
+background: #6F4436;
+
+Menu link
+// Home, About Us, Feature, Purchase, Contact us
+color: #6F4436;
+font-size: 24px;
+font-family: Inter;
+font-weight: 700;
+
+tagline 
+font color: rgba(255, 255, 255, 0.90);  
+font-family: Galada;
+font weight: 400
+
+Main title 
+font-size: 128px;
+font color: rgba(255, 255, 255, 0.80);  
+font-family: Pompiere;
+
+About us Section
+background: #DBBCA1
+
+Paragraph
+color: black;
+font-size: 24px;
+font-family: Inter;
+font-weight: 400;
+
+tagline:
+color: rgba(26.56, 11.40, 11.40, 0.85);
+font-size: 38px;
+font-family: Poppins;
+font-weight: 400;
+
+Main title:
+color: #220404;
+font-size: 60px;
+font-family: Poppins;
+font-weight: 700;
+
+button:
+// Read More
+color: white;
+font-size: 24px;
+font-family: Inter;
+font-weight: 400;
+
+Sponsor Section:
+background: #655546
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+tagline:
+color: white;
+font-size: 39px;
+font-family: Poppins;
+font-weight: 400;
+
+Main title:
+color: white;
+font-size: 64px;
+font-family: Montserrat;
+font-weight: 700;
+
+card:
+background: #DBBCA1;
+box-shadow: 40px 40px 100px rgba(0, 0, 0, 0.25); 
+
+card1:
+// "Indulge in the sublime experience of Coffee Borcelle, where every sip is a journey to flavor paradise. Crafted with precision, our rich blends ignite the senses and redefine coffee appreciation."
+color: black;
+font-size: 16px;
+font-family: Poppins;
+font-weight: 400;
+
+card2:
+// "Discover a world of taste with Coffee Brocelle. Each cup is a masterpiece, blending aromas and flavors that dance on your palate. Join us in celebrating coffee at its finest."
+color: black;
+font-size: 16px;
+font-family: Poppins;
+font-weight: 400;
+
+card3:
+// “Welcome to the heart and soul of coffee passion –Coffee Borcelle. Our carefully curated beans are an ode to craftsmanship, brewing a story of perfection in every cup.”
+color: black;
+font-size: 16px;
+font-family: Poppins;
+font-weight: 400;
+
+Footer SEction:
+background: #291600
+
+// Contact Us
+color: white;
+font-size: 60px;
+font-family: Inter;
+font-weight: 700;
+
+// Send us a message
+color: rgba(255, 255, 255, 0.66);
+font-size: 36px;
+font-family: Inter;
+font-weight: 400;
+
+// Submit
+color: black;
+font-size: 24px;
+font-family: Inter;
+font-weight: 400;
+
+// Sitemap
+color: white;
+font-size: 60px;
+font-family: Inter;
+font-weight: 700;
+
+// All our pages
+color: rgba(255, 255, 255, 0.66);
+font-size: 36px;
+font-family: Inter;
+font-weight: 400;
+
+// - Home<br/> - About Us<br/> - Feature<br/> - Pricing<br/> - Contact Us<br/>
+color: white;
+font-size: 36px;
+font-family: Inter;
+font-weight: 400;
+
+// (08) 400 2000
+color: rgba(255, 255, 255, 0.66);
+font-size: 36px;
+font-family: Inter;
+font-weight: 400;
+
+// coffeeborcelle@gmail.com
+color: rgba(255, 255, 255, 0.66);
+font-size: 36px;
+font-family: Inter;
+font-weight: 400;
+
+Copyright Section
+ background: #DBBCA1
+ // Copyright 2020 All Rights Reserved Company Name.
+color: black;
+font-size: 24px;
+font-family: Inter;
+font-weight: 400;

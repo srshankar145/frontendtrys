@@ -12,6 +12,10 @@ Add tempate directories to input.css
 start tailwind css process. 
 npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
 
+for using custom fonts
+1. Add the Google fonts <link href> in index.html 
+2. add it in theme >> extend >> fontFamily: name: ["fontname"]
+
 color: #220404;
 
 Home (Hero) Section entire background

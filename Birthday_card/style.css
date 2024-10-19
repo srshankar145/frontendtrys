@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
 body {
   background-color: lightcoral;
   display: flex;
@@ -7,16 +9,23 @@ body {
 }
 
 .MainCard {
-  border: 2px solid darkslategray;
+  border: 1px solid darkslategray;
   padding: 1rem 8rem 1rem 1rem;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.title {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .user {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* padding: 0.5rem 0; */
-  margin: 0.5rem 0;
+  justify-content: space-evenly;
+  /* margin: 0.5rem 0; */
 }
 
 img {
@@ -24,7 +33,11 @@ img {
   width: 4rem;
   border: 2px solid gray;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .ViewBtn {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
 }
